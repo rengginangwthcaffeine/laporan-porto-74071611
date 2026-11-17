@@ -1,3 +1,5 @@
 # Laporan mingguan portofolio saham
 
-Halaman statis untuk pemilik dana. `index.html` membaca `data/paket.json` (laporan yang sudah dirilis). Draf minggu baru ditaruh di `data/draft.json` dan bisa dilihat di `?draft`. Setelah dicek, draf disalin menjadi `paket.json`.
+- `index.html` halaman ringkas untuk pemilik dana, dibuka di HP. Membaca `data/ringkas.json` (teks awam per minggu) dan `data/paket.json` (grafik).
+- `rinci.html` versi lengkap, membaca `data/paket.json`.
+- Draf minggu baru ditaruh di `data/ringkas-draft.json` dan `data/draft.json`, dilihat lewat `?draft`. Setelah dicek, keduanya disalin menjadi `ringkas.json` dan `paket.json`.

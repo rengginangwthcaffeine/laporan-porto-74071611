@@ -1,0 +1,169 @@
+{
+ "minggu": [
+  {
+   "minggu": "2026-W46",
+   "label": "9 sampai 13 November 2026",
+   "tanggal_akhir": "2026-11-13",
+   "tanggal_laporan": "2026-11-14",
+   "nilai_akhir": 12758456,
+   "nilai_awal": 12209100,
+   "kas": 4463956,
+   "ihsg_pct": 0.0582,
+   "nilai_titik_awal": 12209100,
+   "ihsg_titik_awal": 5050.43,
+   "ihsg_akhir": 5344.41,
+   "kesimpulan": [
+    "Saham bank dan perusahaan pembiayaan sudah dijual seluruhnya sesuai permintaan. HMSP juga dijual karena masuk daftar pengawasan khusus bursa. Penggantinya ANTM dan INTP.",
+    "Hampir setengah kenaikan minggu ini datang dari BBRI dan BFIN yang terjual di atas harga belinya. Hasilnya sedikit di bawah pasar karena sekitar seperlima uang masih berupa uang tunai sepanjang minggu, jadi tidak ikut naik saat pasar naik.",
+    "Uang tunai itu dipakai membeli dua saham baru pada Senin, 16 November."
+   ],
+   "saham": [
+    {
+     "kode": "AADI",
+     "nama": "Adaro Andalan Indonesia",
+     "usaha": "Tambang batu bara",
+     "nilai": 2140000,
+     "untung": 61888,
+     "untung_pct": 0.0298,
+     "alasan": "Nilai rapor tertinggi di antara semua saham yang lolos seleksi. Labanya besar dan rutin membagi dividen.",
+     "rapor": {
+      "kuat": [
+       {
+        "faktor": "Keuangan sehat",
+        "bintang": 4
+       },
+       {
+        "faktor": "Harga saham wajar",
+        "bintang": 4
+       },
+       {
+        "faktor": "Rajin bagi dividen",
+        "bintang": 4
+       }
+      ],
+      "lemah": {
+       "teks": "Harganya sering naik turun",
+       "bintang": 2
+      }
+     }
+    },
+    {
+     "kode": "INDF",
+     "nama": "Indofood Sukses Makmur",
+     "usaha": "Makanan (Indomie dan lainnya)",
+     "nilai": 2100000,
+     "untung": 34407,
+     "untung_pct": 0.0167,
+     "alasan": "Harganya paling stabil di antara saham yang dipegang. Penjualan makanan tetap jalan saat ekonomi lesu.",
+     "rapor": {
+      "kuat": [
+       {
+        "faktor": "Harga cenderung stabil",
+        "bintang": 5
+       },
+       {
+        "faktor": "Harga saham wajar",
+        "bintang": 4
+       },
+       {
+        "faktor": "Tren harga dan minat beli",
+        "bintang": 4
+       }
+      ],
+      "lemah": {
+       "teks": "Dividennya kecil",
+       "bintang": 2
+      }
+     }
+    },
+    {
+     "kode": "ANTM",
+     "nama": "Aneka Tambang",
+     "usaha": "Tambang emas dan nikel",
+     "nilai": 1967000,
+     "untung": 4060,
+     "untung_pct": 0.0021,
+     "alasan": "Pengganti saham bank yang dijual minggu ini. Laba kuartal terakhirnya naik hampir dua kali lipat.",
+     "rapor": {
+      "kuat": [
+       {
+        "faktor": "Prospek laba",
+        "bintang": 4
+       },
+       {
+        "faktor": "Keuangan sehat",
+        "bintang": 3
+       },
+       {
+        "faktor": "Harga saham wajar",
+        "bintang": 3
+       }
+      ],
+      "lemah": {
+       "teks": "Harganya sering naik turun",
+       "bintang": 1
+      }
+     }
+    },
+    {
+     "kode": "INTP",
+     "nama": "Indocement Tunggal Prakarsa",
+     "usaha": "Semen (Tiga Roda)",
+     "nilai": 1807500,
+     "untung": 27336,
+     "untung_pct": 0.0154,
+     "alasan": "Pengganti saham pembiayaan yang dijual minggu ini. Utangnya sangat kecil.",
+     "rapor": {
+      "kuat": [
+       {
+        "faktor": "Harga saham wajar",
+        "bintang": 4
+       },
+       {
+        "faktor": "Rajin bagi dividen",
+        "bintang": 4
+       },
+       {
+        "faktor": "Harga cenderung stabil",
+        "bintang": 4
+       }
+      ],
+      "lemah": {
+       "teks": "Prospek laba lemah",
+       "bintang": 1
+      }
+     }
+    },
+    {
+     "kode": "PPGL",
+     "nama": "Prima Globalindo Logistik",
+     "usaha": "Jasa angkutan barang",
+     "nilai": 280000,
+     "untung": 172840,
+     "untung_pct": 1.6129,
+     "alasan": "Sisa portofolio lama. Perdagangannya sedang dihentikan sementara oleh bursa, jadi baru bisa dijual begitu dibuka kembali.",
+     "rapor": null
+    }
+   ],
+   "perhatian": [
+    {
+     "lampu": "kuning",
+     "teks": "Sebagian besar uang ada di saham tambang dan komoditas. Nilainya ikut naik turun harga batu bara, emas, dan nikel dunia."
+    },
+    {
+     "lampu": "kuning",
+     "teks": "Ada selisih uang sekitar Rp198 ribu di rekening saham yang belum jelas asalnya. Sedang dicocokkan dengan catatan bank."
+    },
+    {
+     "lampu": "hijau",
+     "teks": "Tidak ada saham yang dipegang masuk daftar pengawasan khusus bursa."
+    }
+   ],
+   "pasar": "Pasar saham Indonesia naik minggu ini, tetapi masih lebih rendah dibanding rata-rata setahun terakhir.",
+   "rencana": [
+    "Senin, 16 November, membeli dua saham baru, yaitu TAPG (kebun kelapa sawit) dan AKRA (penyalur BBM dan bahan kimia), memakai uang tunai yang tersisa.",
+    "Menjual PPGL begitu bursa membuka kembali perdagangannya."
+   ]
+  }
+ ]
+}
