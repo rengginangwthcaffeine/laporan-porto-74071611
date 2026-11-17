@@ -7,17 +7,21 @@
 <meta name="color-scheme" content="light">
 <title>Laporan Portofolio Saham</title>
 <style>
-:root{--bg:#f4f2ee;--card:#fff;--ink:#1a1a1a;--mute:#5c5c5c;--line:#e2dfd8;--acc:#1d4f7a;--naik:#17703f;--turun:#b02a24;--bintang:#d99a00;--kuning:#f2b705;--hijau:#2e9a55;--merah:#d23b32}
+:root{--bg:#f4f2ee;--card:#fff;--ink:#1a1a1a;--mute:#5c5c5c;--line:#e2dfd8;--acc:#1d4f7a;--accbg:#e6eef5;--naik:#17703f;--turun:#b02a24;--bintang:#d99a00;--kuning:#f2b705;--hijau:#2e9a55;--merah:#d23b32}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-.wrap{max-width:560px;margin:0 auto;padding:16px 16px 40px}
 .draf{background:#fff3cd;color:#664d03;padding:10px 16px;font-size:16px;text-align:center}
-header{padding:8px 4px 16px}
-h1{font-size:22px;margin:0;line-height:1.3}
-.tgl{color:var(--mute);font-size:16px;margin-top:2px}
+.atasbar{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.kepala{max-width:560px;margin:0 auto;padding:14px 16px 10px}
+h1{font-size:21px;margin:0;line-height:1.3}
+select{font:inherit;font-size:17px;width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);margin-top:8px}
+.tabs{max-width:560px;margin:0 auto;display:flex;gap:6px;padding:0 16px 10px}
+.tabs button{flex:1;font:inherit;font-size:16px;font-weight:600;padding:11px 4px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.tabs button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.wrap{max-width:560px;margin:0 auto;padding:16px 16px 40px}
 .kartu{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:14px}
-h2{font-size:20px;margin:0 0 12px}
+h2{font-size:20px;margin:0 0 12px;line-height:1.3}
 .besar{font-size:34px;font-weight:700;line-height:1.2;font-variant-numeric:tabular-nums}
 .lbl{color:var(--mute);font-size:16px}
 .ubah{font-size:22px;font-weight:600;margin-top:6px}
@@ -27,38 +31,64 @@ h2{font-size:20px;margin:0 0 12px}
 .dua>div{flex:1;background:var(--bg);border-radius:10px;padding:10px 12px}
 .dua .v{font-size:20px;font-weight:600}
 p{margin:0 0 10px}p:last-child{margin-bottom:0}
-.saham{border-top:1px solid var(--line);padding:14px 0}
-.saham:first-of-type{border-top:0;padding-top:0}
 .atas{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
 .nama{font-weight:700;font-size:19px;line-height:1.3}
 .kode{color:var(--mute);font-size:15px}
 .nilai{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
 .nilai .n{font-weight:600}
 .nilai .u{font-size:16px}
-.alasan{font-size:17px;margin:8px 0}
+.alasan{font-size:17px;margin:10px 0}
+.skorbar{display:flex;align-items:center;gap:10px;margin:10px 0;font-size:16px}
+.skorbar .angka{font-size:26px;font-weight:700;color:var(--acc);line-height:1}
 .rapor{background:var(--bg);border-radius:10px;padding:8px 12px;font-size:16px}
-.rapor div{display:flex;justify-content:space-between;gap:8px}
+.rapor .b{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:2px 0}
+.rapor .b span:first-child{flex:1}
 .bt{color:var(--bintang);letter-spacing:1px;white-space:nowrap}
 .bt i{color:#cfcac0;font-style:normal}
-.lemah{color:var(--mute)}
-.kas{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:14px;font-weight:600}
+.ang{width:30px;text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{background:var(--accbg);color:var(--acc);border-radius:8px;padding:4px 9px;font-size:15px;white-space:nowrap}
+.lemah{color:var(--mute);font-size:15px;margin-top:8px}
+.baris{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-top:1px solid var(--line)}
 .titik{display:flex;gap:12px;margin-bottom:12px;align-items:flex-start}
 .titik:last-child{margin-bottom:0}
 .lampu{width:18px;height:18px;border-radius:50%;flex:none;margin-top:5px}
 .l-hijau{background:var(--hijau)}.l-kuning{background:var(--kuning)}.l-merah{background:var(--merah)}
-ol{margin:0;padding-left:22px}ol li{margin-bottom:8px}
+ol,ul{margin:0;padding-left:22px}li{margin-bottom:8px}
 svg text{font-size:14px;fill:var(--mute)}
 .leg{display:flex;gap:18px;font-size:16px;color:var(--mute);margin-top:6px}
 .leg i{display:inline-block;width:18px;height:4px;border-radius:2px;vertical-align:middle;margin-right:6px}
 .ket{font-size:15px;color:var(--mute);margin-top:8px}
 .catatan{font-size:15px;color:var(--mute);padding:4px 6px}
 .catatan p{margin-bottom:6px}
-select{font:inherit;font-size:17px;width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);margin-top:6px}
+.bobot{margin-bottom:12px}
+.bobot .atas{font-size:17px;font-weight:600}
+.pita{height:12px;background:var(--bg);border-radius:6px;overflow:hidden;margin:4px 0}
+.pita i{display:block;height:100%;background:var(--acc)}
+.bobot .isi{font-size:15px;color:var(--mute)}
+.tahap{display:inline-block;background:var(--acc);color:#fff;border-radius:8px;padding:1px 10px;font-size:15px;margin-bottom:8px}
+.rank{border-top:1px solid var(--line)}
+.rank summary{list-style:none;display:flex;align-items:center;gap:10px;padding:12px 0;cursor:pointer}
+.rank summary::-webkit-details-marker{display:none}
+.rank .no{width:28px;color:var(--mute);font-variant-numeric:tabular-nums}
+.rank .kd{flex:1;line-height:1.3}
+.rank .kd b{font-size:18px}
+.rank .kd span{display:block;font-size:14px;color:var(--mute)}
+.rank .sk{font-weight:700;font-size:20px;color:var(--acc);width:36px;text-align:right}
+.rank .tg{font-size:13px;background:var(--naik);color:#fff;border-radius:6px;padding:1px 7px;white-space:nowrap}
+.rank .bk{color:var(--mute);font-size:18px;transition:transform .15s}
+.rank[open] .bk{transform:rotate(90deg)}
+.rank .dalam{padding:0 0 14px 38px;font-size:16px}
+.rank.pilih summary{background:#f1f7f2;margin:0 -18px;padding-left:18px;padding-right:18px}
+button.lagi{font:inherit;font-size:17px;width:100%;margin-top:12px;padding:12px;border-radius:10px;border:1px solid var(--acc);background:var(--card);color:var(--acc);font-weight:600;cursor:pointer}
+dl{margin:0}dt{font-weight:600;margin-top:8px}dd{margin:0;color:var(--mute);font-size:16px}
 a.rinci{display:block;text-align:center;font-size:15px;color:var(--acc);margin-top:18px}
 </style>
 </head>
 <body>
 <div class="draf" id="draf" hidden>Pratinjau, belum dikirim ke pemilik dana</div>
+<div class="atasbar"><div class="kepala"><h1>Laporan Portofolio Saham</h1><select id="pilih" aria-label="Pilih minggu laporan"></select></div>
+<div class="tabs" id="tabs"><button data-t="ringkasan" class="on">Ringkasan</button><button data-t="saham">Saham</button><button data-t="cara">Cara Memilih</button></div></div>
 <div class="wrap" id="isi"><p>Memuat laporan...</p></div>
 <script>
 (function(){
@@ -71,11 +101,21 @@ function rp(v){const a=Math.abs(v);let t;
   else if(a>=1e3)t=Math.round(a/1e3).toLocaleString('id-ID')+' ribu';
   else t=Math.round(a).toLocaleString('id-ID');
   return 'Rp'+t;}
+const num=(v,d=1)=>v==null?'–':Number(v).toLocaleString('id-ID',{maximumFractionDigits:d});
 const pct=v=>(Math.abs(v)*100).toLocaleString('id-ID',{maximumFractionDigits:1})+'%';
 const arah=v=>v>=0?'naik':'turun';
 const tgl=s=>new Date(s+'T00:00:00').toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});
 const bintang=n=>'<span class="bt">'+'★'.repeat(n)+'<i>'+'★'.repeat(5-n)+'</i></span>';
-let R,P,W;
+let R,P,W,TAB='ringkasan',SEMUA=false;
+const minggu=()=>R.minggu.find(m=>m.minggu===W);
+
+function rasioChips(r){if(!r)return '';const c=[];
+  if(r.per!=null)c.push(`PER ${num(r.per)}x`);if(r.pbv!=null)c.push(`PBV ${num(r.pbv,2)}x`);if(r.roe!=null)c.push(`ROE ${num(r.roe)}%`);
+  if(r.der!=null)c.push(`DER ${num(r.der,2)}`);if(r.dy!=null)c.push(`Dividen ${num(r.dy)}%`);
+  if(r.laba_q!=null)c.push(`Laba kuartal ${r.laba_q>=0?'+':'−'}${num(Math.abs(r.laba_q),0)}%`);
+  return `<div class="chips">${c.map(x=>`<span class="chip">${x}</span>`).join('')}</div>`;}
+function raporFaktor(f){return `<div class="rapor">${f.map(x=>`<div class="b"><span>${esc(x.faktor)}</span>${bintang(x.bintang)}<span class="ang">${x.nilai}</span></div>`).join('')}</div>`;}
+
 function grafik(w){
   const t0=(P.kebijakan||[]).find(k=>k.kode==='titik_awal_tanggal')?.nilai_teks||'';
   const pts=(P.nilai_harian||[]).filter(p=>p.tanggal>=t0&&p.tanggal<=w.tanggal_akhir);
@@ -84,45 +124,92 @@ function grafik(w){
   const all=A.concat(B),mn=Math.floor(Math.min(...all)-1),mx=Math.ceil(Math.max(...all)+1);
   const W_=340,H=200,pl=34,pr=8,pt=8,pb=26,x=i=>pl+i*(W_-pl-pr)/(pts.length-1),y=v=>pt+(mx-v)*(H-pt-pb)/(mx-mn);
   const ln=(a,c)=>`<polyline fill="none" stroke="${c}" stroke-width="3" stroke-linejoin="round" points="${a.map((v,i)=>x(i).toFixed(1)+','+y(v).toFixed(1)).join(' ')}"/>`;
-  let g=`<line x1="${pl}" x2="${W_-pr}" y1="${y(100)}" y2="${y(100)}" stroke="#bbb" stroke-dasharray="4 4"/><text x="${pl-4}" y="${y(100)+5}" text-anchor="end">100</text>`;
   const d=s=>{const q=new Date(s+'T00:00:00');return q.getDate()+'/'+(q.getMonth()+1)};
-  g+=`<text x="${pl}" y="${H-6}">${d(pts[0].tanggal)}</text><text x="${W_-pr}" y="${H-6}" text-anchor="end">${d(pts[pts.length-1].tanggal)}</text>`;
+  let g=`<line x1="${pl}" x2="${W_-pr}" y1="${y(100)}" y2="${y(100)}" stroke="#bbb" stroke-dasharray="4 4"/><text x="${pl-4}" y="${y(100)+5}" text-anchor="end">100</text><text x="${pl}" y="${H-6}">${d(pts[0].tanggal)}</text><text x="${W_-pr}" y="${H-6}" text-anchor="end">${d(pts[pts.length-1].tanggal)}</text>`;
   const a=A[A.length-1]-100,b=B[B.length-1]-100;
   return `<div class="kartu"><h2>Perjalanan sejak awal</h2><svg viewBox="0 0 ${W_} ${H}" width="100%" role="img" aria-label="Grafik portofolio dibanding pasar">${g}${ln(B,'#9a958c')}${ln(A,'#1d4f7a')}</svg>
   <div class="leg"><span><i style="background:#1d4f7a"></i>Portofolio ${a>=0?'+':'−'}${pct(a/100)}</span><span><i style="background:#9a958c"></i>Pasar ${b>=0?'+':'−'}${pct(b/100)}</span></div>
   <div class="ket">Dihitung sejak ${tgl(t0)}, saat cara pengelolaan baru dimulai. Garis putus-putus adalah titik awal.</div>${w.pasar?`<p style="margin-top:10px">${esc(w.pasar)}</p>`:''}</div>`;
 }
-function render(){
-  const w=R.minggu.find(m=>m.minggu===W);
-  const ch=w.nilai_akhir-w.nilai_awal,cp=ch/w.nilai_awal;
-  const sa=w.nilai_akhir/w.nilai_titik_awal-1;
-  let h=`<header><h1>Laporan Portofolio Saham</h1><div class="tgl">${esc(w.label)}</div></header>`;
-  h+=`<div class="kartu"><div class="lbl">Nilai portofolio sekarang</div><div class="besar">${rp(w.nilai_akhir)}</div>
+
+function tabRingkasan(w){
+  const ch=w.nilai_akhir-w.nilai_awal,cp=ch/w.nilai_awal,sa=w.nilai_akhir/w.nilai_titik_awal-1;
+  let h=`<div class="kartu"><div class="lbl">Nilai portofolio per ${tgl(w.tanggal_akhir)}</div><div class="besar">${rp(w.nilai_akhir)}</div>
   <div class="ubah ${arah(ch)}">${ch>=0?'Naik':'Turun'} ${rp(ch)} (${pct(cp)}) minggu ini</div>
-  <div class="banding">Pasar saham secara umum ${arah(w.ihsg_pct)} ${pct(w.ihsg_pct)}. ${Math.abs(cp-w.ihsg_pct)<0.0025?'Hasil portofolio hampir sama dengan pasar.':cp>w.ihsg_pct?'Portofolio lebih baik dari pasar.':'Portofolio sedikit di bawah pasar.'}</div>
-  <div class="dua"><div><div class="lbl">Sejak awal</div><div class="v ${arah(sa)}">${sa>=0?'+':'−'}${pct(sa)}</div></div><div><div class="lbl">Uang tunai</div><div class="v">${rp(w.kas)}</div></div></div></div>`;
+  <div class="banding">Pasar saham secara umum ${arah(w.ihsg_pct)} ${pct(w.ihsg_pct)}. ${Math.abs(cp-w.ihsg_pct)<0.0025?'Hasil portofolio hampir sama dengan pasar.':cp>w.ihsg_pct?'Portofolio lebih baik dari pasar.':'Portofolio di bawah pasar.'}</div>
+  <div class="dua"><div><div class="lbl">Sejak awal</div><div class="v ${w.titik_awal?'':arah(sa)}">${w.titik_awal?'Titik awal':(sa>=0?'+':'−')+pct(sa)}</div></div><div><div class="lbl">Uang tunai</div><div class="v">${rp(w.kas)}</div></div></div></div>`;
   h+=`<div class="kartu"><h2>Ringkasan minggu ini</h2>${w.kesimpulan.map(k=>`<p>${esc(k)}</p>`).join('')}</div>`;
-  h+=`<div class="kartu"><h2>Saham yang dipegang</h2>`;
-  for(const s of w.saham){
-    h+=`<div class="saham"><div class="atas"><div><div class="nama">${esc(s.nama)}</div><div class="kode">${esc(s.kode)} · ${esc(s.usaha)}</div></div>
-    <div class="nilai"><div class="n">${rp(s.nilai)}</div><div class="u ${arah(s.untung)}">${s.untung>=0?'Untung':'Rugi'} ${rp(s.untung)}</div></div></div>
-    <div class="alasan">${esc(s.alasan)}</div>`;
-    if(s.rapor){h+=`<div class="rapor">${s.rapor.kuat.map(r=>`<div><span>${esc(r.faktor)}</span>${bintang(r.bintang)}</div>`).join('')}${s.rapor.lemah&&s.rapor.lemah.bintang<=2?`<div class="lemah"><span>${esc(s.rapor.lemah.teks)}</span>${bintang(s.rapor.lemah.bintang)}</div>`:''}</div>`}
+  h+=grafik(w);
+  if(w.perhatian&&w.perhatian.length)h+=`<div class="kartu"><h2>Yang perlu diperhatikan</h2>${w.perhatian.map(p=>`<div class="titik"><span class="lampu l-${esc(p.lampu)}"></span><div>${esc(p.teks)}</div></div>`).join('')}<div class="ket">Hijau aman, kuning dipantau, merah perlu tindakan.</div></div>`;
+  h+=`<div class="kartu"><h2>Rencana minggu depan</h2>${w.rencana&&w.rencana.length?`<ol>${w.rencana.map(r=>`<li>${esc(r)}</li>`).join('')}</ol>`:'<p>Tidak ada jual beli minggu depan.</p>'}</div>`;
+  h+=`<div class="catatan"><p>Keputusan jual beli mengikuti aturan tertulis yang sama setiap minggu, bukan tebakan harian. Cara memilihnya ada di tab Cara Memilih.</p><p>Hasil yang sudah lewat tidak menjamin hasil ke depan.</p><p>Angka diambil dari rekening saham dan dicek ulang setiap minggu. Laporan disusun ${tgl(w.tanggal_laporan)}.</p></div>`;
+  return h;
+}
+
+function tabSaham(w){
+  let h='';
+  if(w.saham.some(s=>s.faktor)){
+    h+=`<div class="kartu"><h2>Saham yang dipegang</h2><p class="lbl">Per ${tgl(w.tanggal_akhir)}. Nilai 0 sampai 100 menunjukkan posisi saham dibanding ${w.jumlah_lolos} saham yang lolos saringan. Bintang adalah versi singkat dari nilai yang sama.</p></div>`;
+    for(const s of w.saham){
+      h+=`<div class="kartu"><div class="atas"><div><div class="nama">${esc(s.nama)}</div><div class="kode">${esc(s.kode)} · ${esc(s.usaha)}</div></div>
+      <div class="nilai"><div class="n">${rp(s.nilai)}</div><div class="u ${arah(s.untung)}">${s.untung>=0?'Untung':'Rugi'} ${rp(s.untung)}</div><div class="u lbl">${num(s.bobot*100)}% portofolio</div></div></div>
+      <div class="alasan">${esc(s.alasan)}</div>`;
+      if(s.faktor)h+=`<div class="skorbar"><span class="angka">${s.skor}</span><span>nilai total, peringkat ${s.peringkat} dari ${w.jumlah_lolos}</span></div>${raporFaktor(s.faktor)}${rasioChips(s.rasio)}${s.lemah?`<div class="lemah">Catatan: ${esc(s.lemah.teks.toLowerCase())}.</div>`:''}`;
+      h+=`</div>`;
+    }
+    const pegang=new Set(w.saham.map(s=>s.kode)),masuk=(w.peringkat||[]).filter(p=>p.pilih&&!pegang.has(p.kode));
+    if(masuk.length){h+=`<div class="kartu"><h2>Masuk setelah minggu ini</h2><p class="lbl">Hasil penilaian ulang, dibeli sesuai rencana.</p></div>`;
+      for(const s of masuk)h+=`<div class="kartu"><div class="nama">${esc(s.kode)}</div><div class="kode">${esc(s.usaha)}</div><div class="skorbar"><span class="angka">${s.skor}</span><span>nilai total, peringkat ${s.no} dari ${w.jumlah_lolos}</span></div>${raporFaktor(s.faktor)}${rasioChips(s.rasio)}</div>`;}
+  }else{
+    h+=`<div class="kartu"><h2>Saham yang dipegang</h2><p class="lbl">Per ${tgl(w.tanggal_akhir)}, sebelum pindah ke aturan baru. Saham lama belum dinilai satu per satu karena seluruhnya dijual minggu berikutnya.</p>`;
+    for(const s of w.saham)h+=`<div class="baris"><div><div class="nama" style="font-size:17px">${esc(s.nama)}</div><div class="kode">${esc(s.kode)} · ${esc(s.usaha)}</div></div><div class="nilai"><div class="n">${rp(s.nilai)}</div><div class="u ${arah(s.untung)}">${s.untung>=0?'Untung':'Rugi'} ${rp(s.untung)}</div></div></div>`;
     h+=`</div>`;
   }
-  h+=`<div class="kas"><span>Uang tunai</span><span>${rp(w.kas)}</span></div><div class="ket">Bintang menunjukkan posisi saham dibanding saham besar lain yang lolos seleksi. Lima bintang berarti termasuk yang terbaik.</div></div>`;
-  h+=grafik(w);
-  if(w.perhatian&&w.perhatian.length){h+=`<div class="kartu"><h2>Yang perlu diperhatikan</h2>${w.perhatian.map(p=>`<div class="titik"><span class="lampu l-${esc(p.lampu)}" aria-label="${esc(p.lampu)}"></span><div>${esc(p.teks)}</div></div>`).join('')}<div class="ket">Hijau aman, kuning dipantau, merah perlu tindakan.</div></div>`}
-  h+=`<div class="kartu"><h2>Rencana minggu depan</h2>${w.rencana&&w.rencana.length?`<ol>${w.rencana.map(r=>`<li>${esc(r)}</li>`).join('')}</ol>`:'<p>Tidak ada jual beli minggu depan.</p>'}</div>`;
-  h+=`<div class="catatan"><p>Keputusan jual beli mengikuti aturan tertulis yang sama setiap minggu, bukan tebakan harian.</p><p>Hasil yang sudah lewat tidak menjamin hasil ke depan.</p><p>Angka diambil dari rekening saham dan dicek ulang setiap minggu. Laporan disusun ${tgl(w.tanggal_laporan)}.</p></div>`;
-  if(R.minggu.length>1){h+=`<div class="kartu" style="margin-top:14px"><div class="lbl">Lihat laporan minggu lain</div><select id="pilih">${R.minggu.slice().reverse().map(m=>`<option value="${m.minggu}"${m.minggu===W?' selected':''}>${esc(m.label)}</option>`).join('')}</select></div>`}
+  h+=`<div class="kartu"><div class="atas"><span class="nama">Uang tunai</span><span class="nama">${rp(w.kas)}</span></div></div>`;
+  return h;
+}
+
+function tabCara(w){
+  const M=R.metode;let h=`<div class="kartu"><p>${esc(M.pengantar)}</p></div>`;
+  h+=`<div class="kartu"><span class="tahap">Tahap 1</span><h2>Saringan awal</h2><p>Saham harus memenuhi semua syarat berikut.</p><ul>${M.saringan.map(s=>`<li>${esc(s)}</li>`).join('')}</ul><p class="ket">Penilaian ${esc(w.tanggal_skor)}, ${w.jumlah_lolos} saham lolos saringan.</p></div>`;
+  h+=`<div class="kartu"><span class="tahap">Tahap 2</span><h2>Nilai 6 faktor</h2>${M.faktor.map(f=>`<div class="bobot"><div class="atas"><span>${esc(f.faktor)}</span><span>${f.bobot}%</span></div><div class="pita"><i style="width:${f.bobot*4}%"></i></div><div class="isi">${esc(f.isi)}</div></div>`).join('')}<p class="ket">${esc(M.cara_nilai)}</p></div>`;
+  h+=`<div class="kartu"><span class="tahap">Tahap 3</span><h2>Memilih 6 saham</h2><ol>${M.pemilihan.map(s=>`<li>${esc(s)}</li>`).join('')}</ol></div>`;
+  h+=`<div class="kartu"><span class="tahap">Tahap 4</span><h2>Kapan saham diganti</h2><ol>${M.penggantian.map(s=>`<li>${esc(s)}</li>`).join('')}</ol></div>`;
+  const L=w.peringkat||[],tampil=SEMUA?L:L.slice(0,10);
+  h+=`<div class="kartu"><h2>Peringkat ${esc(w.tanggal_skor)}</h2><p class="lbl">Ketuk satu baris untuk melihat rinciannya. Tanda hijau berarti saham yang dipilih.</p>`;
+  for(const p of tampil){
+    h+=`<details class="rank${p.pilih?' pilih':''}"><summary><span class="no">${p.no}</span><span class="kd"><b>${esc(p.kode)}</b><span>${esc(p.usaha)}</span></span>${p.pilih?'<span class="tg">Dipilih</span>':''}<span class="sk">${p.skor}</span><span class="bk">›</span></summary>
+    <div class="dalam">${p.pilih?'':`<p>${esc(p.alasan)}.</p>`}${raporFaktor(p.faktor)}${rasioChips(p.rasio)}</div></details>`;
+  }
+  if(L.length>10)h+=`<button class="lagi" id="lagi">${SEMUA?'Tampilkan 10 teratas saja':'Tampilkan semua '+L.length+' saham'}</button>`;
+  if(w.catatan_peringkat)h+=`<p class="ket">${esc(w.catatan_peringkat)}</p>`;
+  h+=`</div>`;
+  h+=`<div class="kartu"><h2>Arti singkat rasio</h2><dl>
+  <dt>PER</dt><dd>Harga saham dibanding laba per lembar. Makin kecil, makin murah dibanding labanya.</dd>
+  <dt>PBV</dt><dd>Harga saham dibanding nilai buku. Di bawah 1 berarti dihargai di bawah nilai bukunya.</dd>
+  <dt>ROE</dt><dd>Laba dibanding modal sendiri. Makin besar, makin efisien perusahaan menghasilkan laba.</dd>
+  <dt>DER</dt><dd>Utang dibanding modal sendiri. Makin kecil, makin ringan beban utangnya.</dd>
+  <dt>Dividen</dt><dd>Dividen setahun dibanding harga saham (dividend yield).</dd>
+  <dt>Laba kuartal</dt><dd>Perubahan laba bersih kuartal terakhir dibanding kuartal yang sama tahun lalu.</dd>
+  <dt>Piotroski F-Score</dt><dd>Skor 0 sampai 9 dari sembilan tanda kesehatan keuangan, misalnya laba positif, arus kas positif, dan utang turun.</dd></dl></div>`;
+  return h;
+}
+
+function render(){
+  const w=minggu();
+  document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.t===TAB));
+  let h=TAB==='ringkasan'?tabRingkasan(w):TAB==='saham'?tabSaham(w):tabCara(w);
   h+=`<a class="rinci" href="rinci.html${draft?'?draft':''}">Lihat rincian lengkap</a>`;
   document.getElementById('isi').innerHTML=h;
-  const s=document.getElementById('pilih');if(s)s.onchange=e=>{W=e.target.value;render();scrollTo(0,0)};
+  const l=document.getElementById('lagi');if(l)l.onclick=()=>{SEMUA=!SEMUA;render()};
 }
+document.getElementById('tabs').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;TAB=b.dataset.t;render();scrollTo(0,0)});
+document.getElementById('pilih').addEventListener('change',e=>{W=e.target.value;SEMUA=false;render();scrollTo(0,0)});
 Promise.all(SRC.map(u=>fetch(u,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}))).then(([r,p])=>{
-  R=r;P=p;W=R.minggu[R.minggu.length-1].minggu;document.getElementById('draf').hidden=!draft;render();
-}).catch(e=>{document.getElementById('isi').innerHTML='<p>Laporan belum tersedia.</p>'});
+  R=r;P=p;W=R.minggu[R.minggu.length-1].minggu;
+  document.getElementById('pilih').innerHTML=R.minggu.slice().reverse().map((m,i)=>`<option value="${m.minggu}">${esc(m.label)}${i===0?' · terbaru':''}${m.titik_awal?' · titik awal':''}</option>`).join('');
+  document.getElementById('draf').hidden=!draft;render();
+}).catch(()=>{document.getElementById('isi').innerHTML='<p>Laporan belum tersedia.</p>'});
 })();
 </script>
 </body>

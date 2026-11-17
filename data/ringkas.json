@@ -1,154 +1,2446 @@
 {
+ "metode": {
+  "pengantar": "Saham dipilih dengan aturan tertulis yang sama setiap minggu. Ada empat tahap, dan setiap tahap bisa dicek ulang dengan angka.",
+  "saringan": [
+   "Perusahaan besar, nilai pasar minimal Rp10 triliun",
+   "Ramai diperdagangkan, rata-rata transaksi minimal Rp10 miliar per hari",
+   "Menguntungkan, ROE minimal 10% dan rata-rata ROE 5 tahun minimal 8%",
+   "Harga tidak kemahalan, PER di atas 0 dan maksimal 20",
+   "Utang terkendali, DER di bawah 1,5",
+   "Kondisi keuangan membaik, Piotroski F-Score minimal 5",
+   "Harga per lembar maksimal Rp18.000 supaya 1 lot terjangkau",
+   "Bukan bank dan bukan perusahaan pembiayaan",
+   "Tidak masuk daftar pengawasan khusus bursa dan tidak sedang dihentikan perdagangannya"
+  ],
+  "faktor": [
+   {
+    "kode": "q",
+    "faktor": "Keuangan sehat",
+    "bobot": 25,
+    "isi": "ROE, rata-rata ROE 5 tahun, DER, Piotroski F-Score"
+   },
+   {
+    "kode": "v",
+    "faktor": "Harga saham wajar",
+    "bobot": 15,
+    "isi": "PER dan PBV"
+   },
+   {
+    "kode": "inc",
+    "faktor": "Rajin bagi dividen",
+    "bobot": 15,
+    "isi": "Dividend yield"
+   },
+   {
+    "kode": "lr",
+    "faktor": "Harga cenderung stabil",
+    "bobot": 15,
+    "isi": "Seberapa besar harga naik turun dalam setahun"
+   },
+   {
+    "kode": "pros",
+    "faktor": "Prospek laba",
+    "bobot": 20,
+    "isi": "Target harga analis, perkiraan pertumbuhan laba, pertumbuhan laba kuartal terakhir"
+   },
+   {
+    "kode": "mf",
+    "faktor": "Tren harga dan minat beli",
+    "bobot": 10,
+    "isi": "Kenaikan harga 12 bulan dan pembelian bersih investor asing"
+   }
+  ],
+  "cara_nilai": "Setiap rasio dibandingkan dengan saham lain yang lolos saringan. Nilai 80 berarti saham itu lebih baik dari sekitar 80% saham yang lolos. Nilai total adalah rata-rata keenam faktor sesuai bobotnya.",
+  "pemilihan": [
+   "Dipilih 6 saham dengan nilai total tertinggi.",
+   "Maksimal 2 saham dari sektor yang sama dan 1 saham dari jenis usaha yang sama, supaya risiko tidak menumpuk di satu bidang.",
+   "Saham yang harganya sering bergerak searah dengan saham yang sudah dipilih diberi pengurangan nilai, supaya isi portofolio saling melengkapi.",
+   "Uang dibagi hampir rata ke 6 saham. Setiap saham dijaga antara 12% dan 22% dari portofolio, sisanya sekitar 2% berupa uang tunai."
+  ],
+  "penggantian": [
+   "Penilaian diulang setiap akhir pekan.",
+   "Saham diganti kalau ada pengganti yang nilainya lebih tinggi minimal 8 poin selama 2 minggu berturut-turut, paling banyak 1 kali sebulan. Biaya jual beli sekitar 0,4% jadi alasan aturan ini dibuat ketat.",
+   "Saham langsung diganti tanpa menunggu kalau gugur saringan, masuk daftar pengawasan khusus, atau dihentikan perdagangannya.",
+   "Setiap malam hari bursa harga, berita, dan pengumuman bursa dicek untuk menangkap kejadian seperti ini."
+  ]
+ },
  "minggu": [
   {
+   "minggu": "2026-W45",
+   "label": "2–6 November 2026",
+   "tanggal_akhir": "2026-11-06",
+   "tanggal_laporan": "2026-11-08",
+   "tanggal_skor": "6 November 2026",
+   "titik_awal": true,
+   "nilai_awal": 12352300,
+   "nilai_akhir": 12209100,
+   "kas": 75600,
+   "ihsg_pct": -0.0013,
+   "nilai_titik_awal": 12209100,
+   "jumlah_lolos": 34,
+   "kesimpulan": [
+    "Minggu ini dipakai sebagai titik awal pengukuran. Isinya masih 16 saham lama yang dibeli sebelum ada aturan tertulis.",
+    "Pergerakan harga saham sebenarnya menambah Rp45 ribu. Penurunan nilai datang dari uang tunai yang berkurang Rp188 ribu tanpa transaksi tercatat, dan selisih itu sedang dicocokkan dengan catatan bank.",
+    "Mulai Senin, 9 November, 15 saham lama dijual dan diganti 5 saham dengan nilai tertinggi hasil penilaian. PPGL tetap dipegang karena perdagangannya sedang dihentikan bursa."
+   ],
+   "saham": [
+    {
+     "kode": "ASII",
+     "nama": "Astra International",
+     "usaha": "Otomotif dan konglomerasi",
+     "lot": 5,
+     "nilai": 2500000,
+     "bobot": 0.205,
+     "untung": 216580,
+     "untung_pct": 0.0948,
+     "alasan": "Portofolio lama, dijual 9 November untuk pindah ke aturan baru."
+    },
+    {
+     "kode": "TLKM",
+     "nama": "Telkom Indonesia",
+     "usaha": "Telekomunikasi",
+     "lot": 10,
+     "nilai": 1980000,
+     "bobot": 0.162,
+     "untung": -283390,
+     "untung_pct": -0.1252,
+     "alasan": "Portofolio lama, dijual 9 November untuk pindah ke aturan baru."
+    },
+    {
+     "kode": "ANTM",
+     "nama": "Aneka Tambang",
+     "usaha": "Tambang emas dan nikel",
+     "lot": 6,
+     "nilai": 1614000,
+     "bobot": 0.132,
+     "untung": 637038,
+     "untung_pct": 0.6521,
+     "alasan": "Portofolio lama, dijual 9 November untuk pindah ke aturan baru."
+    },
+    {
+     "kode": "POWR",
+     "nama": "Cikarang Listrindo",
+     "usaha": "Pembangkit listrik",
+     "lot": 10,
+     "nilai": 965000,
+     "bobot": 0.079,
+     "untung": 13580,
+     "untung_pct": 0.0143,
+     "alasan": "Portofolio lama, dijual 9 November untuk pindah ke aturan baru."
+    },
+    {
+     "kode": "SSMS",
+     "nama": "Sawit Sumbermas Sarana",
+     "usaha": "Kebun kelapa sawit",
+     "lot": 10,
+     "nilai": 960000,
+     "bobot": 0.079,
+     "untung": -114100,
+     "untung_pct": -0.1062,
+     "alasan": "Portofolio lama, masuk daftar pengawasan khusus bursa. Dijual 9 November."
+    },
+    {
+     "kode": "NCKL",
+     "nama": "Trimegah Bangun Persada",
+     "usaha": "Tambang dan olahan nikel",
+     "lot": 10,
+     "nilai": 725000,
+     "bobot": 0.059,
+     "untung": -126270,
+     "untung_pct": -0.1483,
+     "alasan": "Portofolio lama, dijual 9 November untuk pindah ke aturan baru."
+    },
+    {
+     "kode": "PGAS",
+     "nama": "Perusahaan Gas Negara",
+     "usaha": "Distribusi gas",
+     "lot": 5,
+     "nilai": 715000,
+     "bobot": 0.059,
+     "untung": -61160,
+     "untung_pct": -0.0788,
+     "alasan": "Portofolio lama, dijual 9 November untuk pindah ke aturan baru."
+    },
+    {
+     "kode": "DSSA",
+     "nama": "Dian Swastatika Sentosa",
+     "usaha": "Energi dan teknologi",
+     "lot": 10,
+     "nilai": 600000,
+     "bobot": 0.049,
+     "untung": -512660,
+     "untung_pct": -0.4608,
+     "alasan": "Portofolio lama, masuk daftar pengawasan khusus bursa. Dijual 9 November."
+    },
+    {
+     "kode": "MARK",
+     "nama": "Mark Dynamics Indonesia",
+     "usaha": "Cetakan sarung tangan",
+     "lot": 5,
+     "nilai": 497500,
+     "bobot": 0.041,
+     "untung": -65840,
+     "untung_pct": -0.1169,
+     "alasan": "Portofolio lama, dijual 9 November untuk pindah ke aturan baru."
+    },
+    {
+     "kode": "TOWR",
+     "nama": "Sarana Menara Nusantara",
+     "usaha": "Menara telekomunikasi",
+     "lot": 10,
+     "nilai": 352000,
+     "bobot": 0.029,
+     "untung": -94660,
+     "untung_pct": -0.2119,
+     "alasan": "Portofolio lama, dijual 9 November untuk pindah ke aturan baru."
+    },
+    {
+     "kode": "MTLA",
+     "nama": "Metropolitan Land",
+     "usaha": "Properti",
+     "lot": 5,
+     "nilai": 350000,
+     "bobot": 0.029,
+     "untung": 34530,
+     "untung_pct": 0.1095,
+     "alasan": "Portofolio lama, dijual 9 November untuk pindah ke aturan baru."
+    },
+    {
+     "kode": "PPGL",
+     "nama": "Prima Globalindo Logistik",
+     "usaha": "Jasa angkutan barang",
+     "lot": 10,
+     "nilai": 280000,
+     "bobot": 0.023,
+     "untung": 172840,
+     "untung_pct": 1.6129,
+     "alasan": "Portofolio lama. Perdagangannya sedang dihentikan sementara oleh bursa."
+    },
+    {
+     "kode": "MDKI",
+     "nama": "Emdeki Utama",
+     "usaha": "Bahan kimia",
+     "lot": 10,
+     "nilai": 177000,
+     "bobot": 0.014,
+     "untung": -8270,
+     "untung_pct": -0.0446,
+     "alasan": "Portofolio lama, dijual 9 November untuk pindah ke aturan baru."
+    },
+    {
+     "kode": "SPTO",
+     "nama": "Surya Pertiwi",
+     "usaha": "Perlengkapan kamar mandi",
+     "lot": 3,
+     "nilai": 177000,
+     "bobot": 0.014,
+     "untung": -3270,
+     "untung_pct": -0.0181,
+     "alasan": "Portofolio lama, dijual 9 November untuk pindah ke aturan baru."
+    },
+    {
+     "kode": "INET",
+     "nama": "Sinergi Inti Andalan Prima",
+     "usaha": "Jaringan internet",
+     "lot": 11,
+     "nilai": 173800,
+     "bobot": 0.014,
+     "untung": -83985,
+     "untung_pct": -0.3258,
+     "alasan": "Portofolio lama, dijual 9 November untuk pindah ke aturan baru."
+    },
+    {
+     "kode": "DEWA",
+     "nama": "Darma Henwa",
+     "usaha": "Jasa tambang batu bara",
+     "lot": 3,
+     "nilai": 67200,
+     "bobot": 0.006,
+     "untung": -33150,
+     "untung_pct": -0.3303,
+     "alasan": "Portofolio lama, dijual 9 November untuk pindah ke aturan baru."
+    }
+   ],
+   "pasar": "Pasar saham Indonesia masih lesu, lebih rendah dibanding rata-rata beberapa bulan dan setahun terakhir.",
+   "perhatian": [
+    {
+     "lampu": "kuning",
+     "teks": "Dua saham lama (SSMS dan DSSA) masuk daftar pengawasan khusus bursa. Keduanya ikut dijual 9 November."
+    },
+    {
+     "lampu": "kuning",
+     "teks": "Uang tunai berkurang Rp188 ribu pada 3 November tanpa transaksi tercatat. Sedang dicocokkan dengan catatan bank."
+    },
+    {
+     "lampu": "kuning",
+     "teks": "PPGL dihentikan sementara perdagangannya oleh bursa, nilainya sekitar Rp280 ribu."
+    }
+   ],
+   "rencana": [
+    "Senin, 9 November, menjual 15 saham lama dan membeli AADI, HMSP, INDF, BFIN, dan BBRI. Pembelian ditunda kalau harganya sudah naik lebih dari 2%.",
+    "Menjual PPGL begitu bursa membuka kembali perdagangannya."
+   ],
+   "peringkat": [
+    {
+     "no": 1,
+     "kode": "AADI",
+     "usaha": "Tambang batu bara",
+     "sektor": "Energi",
+     "skor": 67,
+     "pilih": true,
+     "alasan": "Dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 71,
+       "bintang": 4
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 74,
+       "bintang": 4
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 79,
+       "bintang": 4
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 44,
+       "bintang": 2
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 64,
+       "bintang": 3
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 65,
+       "bintang": 3
+      }
+     ],
+     "rasio": {
+      "per": 5.3,
+      "pbv": 1.16,
+      "roe": 21.8,
+      "der": 0.26,
+      "dy": 9.9,
+      "laba_q": 44.0
+     }
+    },
+    {
+     "no": 2,
+     "kode": "ADRO",
+     "usaha": "Batu bara",
+     "sektor": "Energi",
+     "skor": 66,
+     "pilih": false,
+     "alasan": "Jenis usahanya sama dengan AADI, aturan maksimal 1 saham per jenis usaha",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 42,
+       "bintang": 2
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 82,
+       "bintang": 4
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 88,
+       "bintang": 4
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 71,
+       "bintang": 4
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 67,
+       "bintang": 3
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 56,
+       "bintang": 3
+      }
+     ],
+     "rasio": {
+      "per": 5.8,
+      "pbv": 0.74,
+      "roe": 12.7,
+      "der": 0.33,
+      "dy": 11.4,
+      "laba_q": 79.0
+     }
+    },
+    {
+     "no": 3,
+     "kode": "HMSP",
+     "usaha": "Rokok",
+     "sektor": "Barang Konsumen Primer",
+     "skor": 62,
+     "pilih": true,
+     "alasan": "Dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 89,
+       "bintang": 4
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 26,
+       "bintang": 1
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 74,
+       "bintang": 4
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 65,
+       "bintang": 3
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 38,
+       "bintang": 2
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 75,
+       "bintang": 4
+      }
+     ],
+     "rasio": {
+      "per": 8.8,
+      "pbv": 2.68,
+      "roe": 30.5,
+      "der": 0.01,
+      "dy": 8.7,
+      "laba_q": -3.0
+     }
+    },
+    {
+     "no": 4,
+     "kode": "INDF",
+     "usaha": "Makanan (Indomie dan lainnya)",
+     "sektor": "Barang Konsumen Primer",
+     "skor": 61,
+     "pilih": true,
+     "alasan": "Dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 38,
+       "bintang": 2
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 84,
+       "bintang": 4
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 35,
+       "bintang": 2
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 97,
+       "bintang": 5
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 55,
+       "bintang": 3
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 76,
+       "bintang": 4
+      }
+     ],
+     "rasio": {
+      "per": 5.7,
+      "pbv": 0.76,
+      "roe": 13.4,
+      "der": 0.6,
+      "dy": 4.2,
+      "laba_q": 54.0
+     }
+    },
+    {
+     "no": 5,
+     "kode": "BBRI",
+     "usaha": "Bank",
+     "sektor": "Keuangan",
+     "skor": 59,
+     "pilih": true,
+     "alasan": "Dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 50,
+       "bintang": 2
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 54,
+       "bintang": 3
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 94,
+       "bintang": 5
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 91,
+       "bintang": 5
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 40,
+       "bintang": 2
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 30,
+       "bintang": 1
+      }
+     ],
+     "rasio": {
+      "per": 7.0,
+      "pbv": 1.32,
+      "roe": 19.0,
+      "der": 0.06,
+      "dy": 12.3,
+      "laba_q": 21.0
+     }
+    },
+    {
+     "no": 6,
+     "kode": "PTBA",
+     "usaha": "Batu bara",
+     "sektor": "Energi",
+     "skor": 59,
+     "pilih": false,
+     "alasan": "Jenis usahanya sama dengan AADI, aturan maksimal 1 saham per jenis usaha",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 73,
+       "bintang": 4
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 68,
+       "bintang": 3
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 29,
+       "bintang": 1
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 85,
+       "bintang": 4
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 39,
+       "bintang": 2
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 53,
+       "bintang": 3
+      }
+     ],
+     "rasio": {
+      "per": 5.8,
+      "pbv": 1.27,
+      "roe": 21.9,
+      "der": 0.17,
+      "dy": 3.8,
+      "laba_q": 214.0
+     }
+    },
+    {
+     "no": 7,
+     "kode": "BFIN",
+     "usaha": "Pembiayaan",
+     "sektor": "Keuangan",
+     "skor": 58,
+     "pilih": true,
+     "alasan": "Dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 49,
+       "bintang": 2
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 72,
+       "bintang": 4
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 76,
+       "bintang": 4
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 38,
+       "bintang": 2
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 54,
+       "bintang": 3
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 68,
+       "bintang": 3
+      }
+     ],
+     "rasio": {
+      "per": 6.3,
+      "pbv": 0.95,
+      "roe": 15.1,
+      "der": null,
+      "dy": 9.7,
+      "laba_q": 20.0
+     }
+    },
+    {
+     "no": 8,
+     "kode": "LSIP",
+     "usaha": "Perkebunan sawit",
+     "sektor": "Barang Konsumen Primer",
+     "skor": 57,
+     "pilih": false,
+     "alasan": "Sektornya sudah terisi 2 saham",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 46,
+       "bintang": 2
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 93,
+       "bintang": 5
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 44,
+       "bintang": 2
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 68,
+       "bintang": 3
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 38,
+       "bintang": 2
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 73,
+       "bintang": 4
+      }
+     ],
+     "rasio": {
+      "per": 4.3,
+      "pbv": 0.68,
+      "roe": 15.7,
+      "der": null,
+      "dy": 5.5,
+      "laba_q": 60.0
+     }
+    },
+    {
+     "no": 9,
+     "kode": "BNGA",
+     "usaha": "Bank",
+     "sektor": "Keuangan",
+     "skor": 57,
+     "pilih": false,
+     "alasan": "Jenis usahanya sama dengan BBRI, aturan maksimal 1 saham per jenis usaha",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 19,
+       "bintang": 1
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 84,
+       "bintang": 4
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 82,
+       "bintang": 4
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 100,
+       "bintang": 5
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 31,
+       "bintang": 2
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 58,
+       "bintang": 3
+      }
+     ],
+     "rasio": {
+      "per": 6.1,
+      "pbv": 0.65,
+      "roe": 10.6,
+      "der": null,
+      "dy": 10.9,
+      "laba_q": -42.0
+     }
+    },
+    {
+     "no": 10,
+     "kode": "AVIA",
+     "usaha": "Bahan bangunan",
+     "sektor": "Barang Baku",
+     "skor": 56,
+     "pilih": false,
+     "alasan": "Nilainya belum cukup tinggi untuk menggeser saham yang dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 60,
+       "bintang": 3
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 29,
+       "bintang": 1
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 68,
+       "bintang": 3
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 82,
+       "bintang": 4
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 50,
+       "bintang": 2
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 44,
+       "bintang": 2
+      }
+     ],
+     "rasio": {
+      "per": 9.7,
+      "pbv": 1.87,
+      "roe": 19.3,
+      "der": null,
+      "dy": 7.9,
+      "laba_q": null
+     }
+    },
+    {
+     "no": 11,
+     "kode": "TAPG",
+     "usaha": "Kebun kelapa sawit",
+     "sektor": "Barang Konsumen Primer",
+     "skor": 55,
+     "pilih": false,
+     "alasan": "Sektornya sudah terisi 2 saham",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 82,
+       "bintang": 4
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 25,
+       "bintang": 1
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 91,
+       "bintang": 5
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 26,
+       "bintang": 1
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 33,
+       "bintang": 2
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 65,
+       "bintang": 3
+      }
+     ],
+     "rasio": {
+      "per": 8.4,
+      "pbv": 3.24,
+      "roe": 38.6,
+      "der": 0.08,
+      "dy": 11.6,
+      "laba_q": 49.0
+     }
+    },
+    {
+     "no": 12,
+     "kode": "NCKL",
+     "usaha": "Tambang dan olahan nikel",
+     "sektor": "Barang Baku",
+     "skor": 55,
+     "pilih": false,
+     "alasan": "Nilainya belum cukup tinggi untuk menggeser saham yang dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 59,
+       "bintang": 3
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 84,
+       "bintang": 4
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 50,
+       "bintang": 2
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 21,
+       "bintang": 1
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 70,
+       "bintang": 3
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 27,
+       "bintang": 1
+      }
+     ],
+     "rasio": {
+      "per": 4.1,
+      "pbv": 0.97,
+      "roe": 23.8,
+      "der": 0.17,
+      "dy": 5.9,
+      "laba_q": 23.0
+     }
+    },
+    {
+     "no": 13,
+     "kode": "INTP",
+     "usaha": "Semen (Tiga Roda)",
+     "sektor": "Barang Baku",
+     "skor": 54,
+     "pilih": false,
+     "alasan": "Nilainya belum cukup tinggi untuk menggeser saham yang dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 37,
+       "bintang": 2
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 63,
+       "bintang": 3
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 71,
+       "bintang": 4
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 88,
+       "bintang": 4
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 24,
+       "bintang": 1
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 71,
+       "bintang": 4
+      }
+     ],
+     "rasio": {
+      "per": 8.0,
+      "pbv": 0.87,
+      "roe": 10.9,
+      "der": 0.11,
+      "dy": 8.1,
+      "laba_q": 25.0
+     }
+    },
+    {
+     "no": 14,
+     "kode": "JPFA",
+     "usaha": "Ayam dan pakan ternak",
+     "sektor": "Barang Konsumen Primer",
+     "skor": 54,
+     "pilih": false,
+     "alasan": "Sektornya sudah terisi 2 saham",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 33,
+       "bintang": 2
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 90,
+       "bintang": 5
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 100,
+       "bintang": 5
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 32,
+       "bintang": 2
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 44,
+       "bintang": 2
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 37,
+       "bintang": 2
+      }
+     ],
+     "rasio": {
+      "per": 3.8,
+      "pbv": 0.85,
+      "roe": 22.4,
+      "der": 0.83,
+      "dy": 14.8,
+      "laba_q": -36.0
+     }
+    },
+    {
+     "no": 15,
+     "kode": "ANTM",
+     "usaha": "Tambang emas dan nikel",
+     "sektor": "Barang Baku",
+     "skor": 54,
+     "pilih": false,
+     "alasan": "Nilainya belum cukup tinggi untuk menggeser saham yang dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 58,
+       "bintang": 3
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 51,
+       "bintang": 3
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 65,
+       "bintang": 3
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 24,
+       "bintang": 1
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 71,
+       "bintang": 4
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 46,
+       "bintang": 2
+      }
+     ],
+     "rasio": {
+      "per": 6.4,
+      "pbv": 1.63,
+      "roe": 25.4,
+      "der": 0.05,
+      "dy": 7.8,
+      "laba_q": 92.0
+     }
+    },
+    {
+     "no": 16,
+     "kode": "ICBP",
+     "usaha": "Makanan dan minuman",
+     "sektor": "Barang Konsumen Primer",
+     "skor": 54,
+     "pilih": false,
+     "alasan": "Jenis usahanya sama dengan INDF, aturan maksimal 1 saham per jenis usaha",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 38,
+       "bintang": 2
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 43,
+       "bintang": 2
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 32,
+       "bintang": 2
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 94,
+       "bintang": 5
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 77,
+       "bintang": 4
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 33,
+       "bintang": 2
+      }
+     ],
+     "rasio": {
+      "per": 8.9,
+      "pbv": 1.33,
+      "roe": 15.0,
+      "der": 0.65,
+      "dy": 4.2,
+      "laba_q": 57.0
+     }
+    },
+    {
+     "no": 17,
+     "kode": "MYOR",
+     "usaha": "Makanan dan minuman",
+     "sektor": "Barang Konsumen Primer",
+     "skor": 53,
+     "pilih": false,
+     "alasan": "Jenis usahanya sama dengan INDF, aturan maksimal 1 saham per jenis usaha",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 56,
+       "bintang": 3
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 38,
+       "bintang": 2
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 38,
+       "bintang": 2
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 79,
+       "bintang": 4
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 51,
+       "bintang": 3
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 53,
+       "bintang": 3
+      }
+     ],
+     "rasio": {
+      "per": 8.8,
+      "pbv": 1.61,
+      "roe": 18.2,
+      "der": 0.25,
+      "dy": 4.4,
+      "laba_q": 5.0
+     }
+    },
+    {
+     "no": 18,
+     "kode": "UNVR",
+     "usaha": "Makanan dan minuman",
+     "sektor": "Barang Konsumen Primer",
+     "skor": 52,
+     "pilih": false,
+     "alasan": "Jenis usahanya sama dengan INDF, aturan maksimal 1 saham per jenis usaha",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 76,
+       "bintang": 4
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 29,
+       "bintang": 1
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 97,
+       "bintang": 5
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 47,
+       "bintang": 2
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 17,
+       "bintang": 1
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 40,
+       "bintang": 2
+      }
+     ],
+     "rasio": {
+      "per": 6.8,
+      "pbv": 13.74,
+      "roe": 202.3,
+      "der": 0.13,
+      "dy": 13.3,
+      "laba_q": 4.0
+     }
+    },
+    {
+     "no": 19,
+     "kode": "CPIN",
+     "usaha": "Ayam dan pakan ternak",
+     "sektor": "Barang Konsumen Primer",
+     "skor": 51,
+     "pilih": false,
+     "alasan": "Sektornya sudah terisi 2 saham",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 36,
+       "bintang": 2
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 78,
+       "bintang": 4
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 59,
+       "bintang": 3
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 59,
+       "bintang": 3
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 40,
+       "bintang": 2
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 48,
+       "bintang": 2
+      }
+     ],
+     "rasio": {
+      "per": 5.2,
+      "pbv": 1.06,
+      "roe": 20.5,
+      "der": 0.31,
+      "dy": 7.7,
+      "laba_q": 1.0
+     }
+    },
+    {
+     "no": 20,
+     "kode": "TINS",
+     "usaha": "Tambang logam",
+     "sektor": "Barang Baku",
+     "skor": 51,
+     "pilih": false,
+     "alasan": "Nilainya belum cukup tinggi untuk menggeser saham yang dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 72,
+       "bintang": 4
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 59,
+       "bintang": 3
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 21,
+       "bintang": 1
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 12,
+       "bintang": 1
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 62,
+       "bintang": 3
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 68,
+       "bintang": 3
+      }
+     ],
+     "rasio": {
+      "per": 5.2,
+      "pbv": 2.11,
+      "roe": 40.4,
+      "der": 0.1,
+      "dy": 2.6,
+      "laba_q": 365.0
+     }
+    },
+    {
+     "no": 21,
+     "kode": "AKRA",
+     "usaha": "Penyalur BBM dan bahan kimia",
+     "sektor": "Energi",
+     "skor": 50,
+     "pilih": false,
+     "alasan": "Nilainya belum cukup tinggi untuk menggeser saham yang dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 61,
+       "bintang": 3
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 29,
+       "bintang": 1
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 56,
+       "bintang": 3
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 56,
+       "bintang": 3
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 45,
+       "bintang": 2
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 47,
+       "bintang": 2
+      }
+     ],
+     "rasio": {
+      "per": 9.1,
+      "pbv": 2.16,
+      "roe": 23.8,
+      "der": 0.27,
+      "dy": 7.3,
+      "laba_q": 66.0
+     }
+    },
+    {
+     "no": 22,
+     "kode": "ULTJ",
+     "usaha": "Makanan dan minuman",
+     "sektor": "Barang Konsumen Primer",
+     "skor": 50,
+     "pilih": false,
+     "alasan": "Jenis usahanya sama dengan INDF, aturan maksimal 1 saham per jenis usaha",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 54,
+       "bintang": 3
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 16,
+       "bintang": 1
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 53,
+       "bintang": 3
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 74,
+       "bintang": 4
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 48,
+       "bintang": 2
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 53,
+       "bintang": 3
+      }
+     ],
+     "rasio": {
+      "per": 11.7,
+      "pbv": 2.57,
+      "roe": 21.9,
+      "der": null,
+      "dy": 6.3,
+      "laba_q": 7.0
+     }
+    },
+    {
+     "no": 23,
+     "kode": "MAPA",
+     "usaha": "Ritel",
+     "sektor": "Barang Konsumen Non-Primer",
+     "skor": 49,
+     "pilih": false,
+     "alasan": "Nilainya belum cukup tinggi untuk menggeser saham yang dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 61,
+       "bintang": 3
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 49,
+       "bintang": 2
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 15,
+       "bintang": 1
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 41,
+       "bintang": 2
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 52,
+       "bintang": 3
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 79,
+       "bintang": 4
+      }
+     ],
+     "rasio": {
+      "per": 8.0,
+      "pbv": 1.58,
+      "roe": 19.8,
+      "der": 0.06,
+      "dy": 0.7,
+      "laba_q": 16.0
+     }
+    },
+    {
+     "no": 24,
+     "kode": "AMRT",
+     "usaha": "Ritel",
+     "sektor": "Barang Konsumen Primer",
+     "skor": 48,
+     "pilih": false,
+     "alasan": "Sektornya sudah terisi 2 saham",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 67,
+       "bintang": 3
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 22,
+       "bintang": 1
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 47,
+       "bintang": 2
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 29,
+       "bintang": 1
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 65,
+       "bintang": 3
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 38,
+       "bintang": 2
+      }
+     ],
+     "rasio": {
+      "per": 11.6,
+      "pbv": 2.23,
+      "roe": 19.2,
+      "der": 0.1,
+      "dy": 5.7,
+      "laba_q": -12.0
+     }
+    },
+    {
+     "no": 25,
+     "kode": "CMRY",
+     "usaha": "Makanan dan minuman",
+     "sektor": "Barang Konsumen Primer",
+     "skor": 48,
+     "pilih": false,
+     "alasan": "Jenis usahanya sama dengan INDF, aturan maksimal 1 saham per jenis usaha",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 63,
+       "bintang": 3
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 4,
+       "bintang": 1
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 41,
+       "bintang": 2
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 62,
+       "bintang": 3
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 51,
+       "bintang": 3
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 58,
+       "bintang": 3
+      }
+     ],
+     "rasio": {
+      "per": 15.7,
+      "pbv": 4.88,
+      "roe": 31.1,
+      "der": null,
+      "dy": 4.7,
+      "laba_q": -10.0
+     }
+    },
+    {
+     "no": 26,
+     "kode": "MIKA",
+     "usaha": "Rumah sakit",
+     "sektor": "Kesehatan",
+     "skor": 47,
+     "pilih": false,
+     "alasan": "Nilainya belum cukup tinggi untuk menggeser saham yang dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 68,
+       "bintang": 3
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 15,
+       "bintang": 1
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 26,
+       "bintang": 1
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 76,
+       "bintang": 4
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 58,
+       "bintang": 3
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 12,
+       "bintang": 1
+      }
+     ],
+     "rasio": {
+      "per": 12.6,
+      "pbv": 2.35,
+      "roe": 18.6,
+      "der": 0.01,
+      "dy": 3.3,
+      "laba_q": 6.0
+     }
+    },
+    {
+     "no": 27,
+     "kode": "BRIS",
+     "usaha": "Bank",
+     "sektor": "Keuangan",
+     "skor": 46,
+     "pilih": false,
+     "alasan": "Jenis usahanya sama dengan BBRI, aturan maksimal 1 saham per jenis usaha",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 37,
+       "bintang": 2
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 66,
+       "bintang": 3
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 24,
+       "bintang": 1
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 53,
+       "bintang": 3
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 70,
+       "bintang": 3
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 14,
+       "bintang": 1
+      }
+     ],
+     "rasio": {
+      "per": 6.7,
+      "pbv": 1.04,
+      "roe": 15.6,
+      "der": null,
+      "dy": 2.9,
+      "laba_q": 5.0
+     }
+    },
+    {
+     "no": 28,
+     "kode": "TLKM",
+     "usaha": "Telekomunikasi",
+     "sektor": "Infrastruktur",
+     "skor": 46,
+     "pilih": false,
+     "alasan": "Nilainya belum cukup tinggi untuk menggeser saham yang dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 33,
+       "bintang": 2
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 32,
+       "bintang": 2
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 85,
+       "bintang": 4
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 35,
+       "bintang": 2
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 60,
+       "bintang": 3
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 25,
+       "bintang": 1
+      }
+     ],
+     "rasio": {
+      "per": 11.4,
+      "pbv": 1.6,
+      "roe": 14.1,
+      "der": 0.56,
+      "dy": 11.3,
+      "laba_q": -16.0
+     }
+    },
+    {
+     "no": 29,
+     "kode": "ASII",
+     "usaha": "Otomotif dan konglomerasi",
+     "sektor": "Perindustrian",
+     "skor": 46,
+     "pilih": false,
+     "alasan": "Nilainya belum cukup tinggi untuk menggeser saham yang dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 21,
+       "bintang": 1
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 71,
+       "bintang": 4
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 62,
+       "bintang": 3
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 50,
+       "bintang": 2
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 35,
+       "bintang": 2
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 60,
+       "bintang": 3
+      }
+     ],
+     "rasio": {
+      "per": 6.8,
+      "pbv": 0.85,
+      "roe": 12.6,
+      "der": 0.39,
+      "dy": 7.8,
+      "laba_q": 1.0
+     }
+    },
+    {
+     "no": 30,
+     "kode": "TKIM",
+     "usaha": "Bahan bangunan",
+     "sektor": "Barang Baku",
+     "skor": 41,
+     "pilih": false,
+     "alasan": "Nilainya belum cukup tinggi untuk menggeser saham yang dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 28,
+       "bintang": 1
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 100,
+       "bintang": 5
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 12,
+       "bintang": 1
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 18,
+       "bintang": 1
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 37,
+       "bintang": 2
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 72,
+       "bintang": 4
+      }
+     ],
+     "rasio": {
+      "per": 2.8,
+      "pbv": 0.33,
+      "roe": 11.9,
+      "der": 0.2,
+      "dy": 0.5,
+      "laba_q": -23.0
+     }
+    },
+    {
+     "no": 31,
+     "kode": "ENRG",
+     "usaha": "Energi lainnya",
+     "sektor": "Energi",
+     "skor": 37,
+     "pilih": false,
+     "alasan": "Nilainya belum cukup tinggi untuk menggeser saham yang dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 23,
+       "bintang": 1
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 35,
+       "bintang": 2
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 4,
+       "bintang": 1
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 3,
+       "bintang": 1
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 88,
+       "bintang": 4
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 75,
+       "bintang": 4
+      }
+     ],
+     "rasio": {
+      "per": 11.8,
+      "pbv": 1.25,
+      "roe": 10.6,
+      "der": 0.54,
+      "dy": null,
+      "laba_q": 51.0
+     }
+    },
+    {
+     "no": 32,
+     "kode": "ARCI",
+     "usaha": "Tambang logam",
+     "sektor": "Barang Baku",
+     "skor": 37,
+     "pilih": false,
+     "alasan": "Nilainya belum cukup tinggi untuk menggeser saham yang dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 49,
+       "bintang": 2
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 19,
+       "bintang": 1
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 18,
+       "bintang": 1
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 6,
+       "bintang": 1
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 64,
+       "bintang": 3
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 57,
+       "bintang": 3
+      }
+     ],
+     "rasio": {
+      "per": 9.5,
+      "pbv": 3.2,
+      "roe": 33.7,
+      "der": 1.19,
+      "dy": 2.2,
+      "laba_q": 122.0
+     }
+    },
+    {
+     "no": 33,
+     "kode": "CBDK",
+     "usaha": "Properti",
+     "sektor": "Properti & Real Estat",
+     "skor": 35,
+     "pilih": false,
+     "alasan": "Nilainya belum cukup tinggi untuk menggeser saham yang dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 58,
+       "bintang": 3
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 47,
+       "bintang": 2
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 9,
+       "bintang": 1
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 15,
+       "bintang": 1
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 34,
+       "bintang": 2
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 33,
+       "bintang": 2
+      }
+     ],
+     "rasio": {
+      "per": 8.2,
+      "pbv": 1.44,
+      "roe": 17.6,
+      "der": 0.01,
+      "dy": 0.2,
+      "laba_q": -82.0
+     }
+    },
+    {
+     "no": 34,
+     "kode": "AMMN",
+     "usaha": "Tambang logam",
+     "sektor": "Barang Baku",
+     "skor": 35,
+     "pilih": false,
+     "alasan": "Nilainya belum cukup tinggi untuk menggeser saham yang dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 44,
+       "bintang": 2
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 16,
+       "bintang": 1
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 4,
+       "bintang": 1
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 9,
+       "bintang": 1
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 79,
+       "bintang": 4
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 39,
+       "bintang": 2
+      }
+     ],
+     "rasio": {
+      "per": 11.7,
+      "pbv": 2.37,
+      "roe": 20.2,
+      "der": 0.91,
+      "dy": null,
+      "laba_q": 1467.0
+     }
+    }
+   ],
+   "catatan_peringkat": "Penilaian 6 November masih memasukkan bank dan perusahaan pembiayaan. Keduanya dikeluarkan dari daftar mulai 10 November atas permintaan pemilik dana."
+  },
+  {
    "minggu": "2026-W46",
-   "label": "9 sampai 13 November 2026",
+   "label": "9–13 November 2026",
    "tanggal_akhir": "2026-11-13",
    "tanggal_laporan": "2026-11-14",
-   "nilai_akhir": 12758456,
+   "tanggal_skor": "13 November 2026",
    "nilai_awal": 12209100,
+   "nilai_akhir": 12758456,
    "kas": 4463956,
    "ihsg_pct": 0.0582,
    "nilai_titik_awal": 12209100,
-   "ihsg_titik_awal": 5050.43,
-   "ihsg_akhir": 5344.41,
+   "jumlah_lolos": 26,
    "kesimpulan": [
-    "Saham bank dan perusahaan pembiayaan sudah dijual seluruhnya sesuai permintaan. HMSP juga dijual karena masuk daftar pengawasan khusus bursa. Penggantinya ANTM dan INTP.",
+    "Saham bank dan perusahaan pembiayaan sudah dijual seluruhnya sesuai permintaan. HMSP juga dijual karena masuk daftar pengawasan khusus bursa. Penggantinya ANTM dan INTP, dua saham dengan nilai tertinggi berikutnya yang lolos aturan sektor dan jenis usaha.",
     "Hampir setengah kenaikan minggu ini datang dari BBRI dan BFIN yang terjual di atas harga belinya. Hasilnya sedikit di bawah pasar karena sekitar seperlima uang masih berupa uang tunai sepanjang minggu, jadi tidak ikut naik saat pasar naik.",
-    "Uang tunai itu dipakai membeli dua saham baru pada Senin, 16 November."
+    "Aturan sekarang memakai 6 saham inti. Dua saham tambahan hasil penilaian ulang, TAPG dan AKRA, dibeli pada Senin, 16 November memakai uang tunai yang tersisa."
    ],
    "saham": [
     {
      "kode": "AADI",
      "nama": "Adaro Andalan Indonesia",
      "usaha": "Tambang batu bara",
+     "lot": 2,
      "nilai": 2140000,
+     "bobot": 0.168,
      "untung": 61888,
      "untung_pct": 0.0298,
-     "alasan": "Nilai rapor tertinggi di antara semua saham yang lolos seleksi. Labanya besar dan rutin membagi dividen.",
-     "rapor": {
-      "kuat": [
-       {
-        "faktor": "Keuangan sehat",
-        "bintang": 4
-       },
-       {
-        "faktor": "Harga saham wajar",
-        "bintang": 4
-       },
-       {
-        "faktor": "Rajin bagi dividen",
-        "bintang": 4
-       }
-      ],
-      "lemah": {
-       "teks": "Harganya sering naik turun",
+     "alasan": "Nilai tertinggi di antara semua saham yang lolos seleksi. PER rendah, ROE tinggi, dan dividennya besar.",
+     "skor": 68,
+     "peringkat": 1,
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 76,
+       "bintang": 4
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 79,
+       "bintang": 4
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 83,
+       "bintang": 4
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 45,
        "bintang": 2
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 58,
+       "bintang": 3
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 63,
+       "bintang": 3
       }
+     ],
+     "rasio": {
+      "per": 5.6,
+      "pbv": 1.22,
+      "roe": 21.8,
+      "der": 0.26,
+      "dy": 9.4,
+      "laba_q": 44.0
+     },
+     "lemah": {
+      "teks": "Harganya sering naik turun",
+      "bintang": 2
      }
     },
     {
      "kode": "INDF",
      "nama": "Indofood Sukses Makmur",
      "usaha": "Makanan (Indomie dan lainnya)",
+     "lot": 3,
      "nilai": 2100000,
+     "bobot": 0.165,
      "untung": 34407,
      "untung_pct": 0.0167,
-     "alasan": "Harganya paling stabil di antara saham yang dipegang. Penjualan makanan tetap jalan saat ekonomi lesu.",
-     "rapor": {
-      "kuat": [
-       {
-        "faktor": "Harga cenderung stabil",
-        "bintang": 5
-       },
-       {
-        "faktor": "Harga saham wajar",
-        "bintang": 4
-       },
-       {
-        "faktor": "Tren harga dan minat beli",
-        "bintang": 4
-       }
-      ],
-      "lemah": {
-       "teks": "Dividennya kecil",
+     "alasan": "Harganya paling stabil di antara saham yang dipegang. PBV di bawah 1, artinya harga saham di bawah nilai bukunya.",
+     "skor": 63,
+     "peringkat": 3,
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 40,
        "bintang": 2
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 88,
+       "bintang": 4
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 41,
+       "bintang": 2
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 100,
+       "bintang": 5
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 55,
+       "bintang": 3
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 76,
+       "bintang": 4
       }
+     ],
+     "rasio": {
+      "per": 5.8,
+      "pbv": 0.77,
+      "roe": 13.4,
+      "der": 0.6,
+      "dy": 4.1,
+      "laba_q": 54.0
+     },
+     "lemah": {
+      "teks": "Keuangan kurang kuat",
+      "bintang": 2
      }
     },
     {
      "kode": "ANTM",
      "nama": "Aneka Tambang",
      "usaha": "Tambang emas dan nikel",
+     "lot": 7,
      "nilai": 1967000,
+     "bobot": 0.154,
      "untung": 4060,
      "untung_pct": 0.0021,
-     "alasan": "Pengganti saham bank yang dijual minggu ini. Laba kuartal terakhirnya naik hampir dua kali lipat.",
-     "rapor": {
-      "kuat": [
-       {
-        "faktor": "Prospek laba",
-        "bintang": 4
-       },
-       {
-        "faktor": "Keuangan sehat",
-        "bintang": 3
-       },
-       {
-        "faktor": "Harga saham wajar",
-        "bintang": 3
-       }
-      ],
-      "lemah": {
-       "teks": "Harganya sering naik turun",
+     "alasan": "Pengganti saham bank yang dijual minggu ini. Laba kuartal terakhirnya naik hampir dua kali lipat dan utangnya sangat kecil.",
+     "skor": 57,
+     "peringkat": 8,
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 58,
+       "bintang": 3
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 62,
+       "bintang": 3
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 69,
+       "bintang": 3
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 24,
        "bintang": 1
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 73,
+       "bintang": 4
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 45,
+       "bintang": 2
       }
+     ],
+     "rasio": {
+      "per": 6.7,
+      "pbv": 1.7,
+      "roe": 25.4,
+      "der": 0.05,
+      "dy": 7.5,
+      "laba_q": 92.0
+     },
+     "lemah": {
+      "teks": "Harganya sering naik turun",
+      "bintang": 1
      }
     },
     {
      "kode": "INTP",
      "nama": "Indocement Tunggal Prakarsa",
      "usaha": "Semen (Tiga Roda)",
+     "lot": 3,
      "nilai": 1807500,
+     "bobot": 0.142,
      "untung": 27336,
      "untung_pct": 0.0154,
-     "alasan": "Pengganti saham pembiayaan yang dijual minggu ini. Utangnya sangat kecil.",
-     "rapor": {
-      "kuat": [
-       {
-        "faktor": "Harga saham wajar",
-        "bintang": 4
-       },
-       {
-        "faktor": "Rajin bagi dividen",
-        "bintang": 4
-       },
-       {
-        "faktor": "Harga cenderung stabil",
-        "bintang": 4
-       }
-      ],
-      "lemah": {
-       "teks": "Prospek laba lemah",
+     "alasan": "Pengganti saham pembiayaan yang dijual minggu ini. Utangnya sangat kecil dan harganya cukup stabil.",
+     "skor": 54,
+     "peringkat": 13,
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 38,
+       "bintang": 2
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 71,
+       "bintang": 4
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 72,
+       "bintang": 4
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 76,
+       "bintang": 4
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 21,
        "bintang": 1
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 72,
+       "bintang": 4
       }
+     ],
+     "rasio": {
+      "per": 8.3,
+      "pbv": 0.9,
+      "roe": 10.9,
+      "der": 0.11,
+      "dy": 7.8,
+      "laba_q": 25.0
+     },
+     "lemah": {
+      "teks": "Prospek laba lemah",
+      "bintang": 1
      }
     },
     {
      "kode": "PPGL",
      "nama": "Prima Globalindo Logistik",
      "usaha": "Jasa angkutan barang",
+     "lot": 10,
      "nilai": 280000,
+     "bobot": 0.022,
      "untung": 172840,
      "untung_pct": 1.6129,
-     "alasan": "Sisa portofolio lama. Perdagangannya sedang dihentikan sementara oleh bursa, jadi baru bisa dijual begitu dibuka kembali.",
-     "rapor": null
+     "alasan": "Sisa portofolio lama. Perdagangannya sedang dihentikan sementara oleh bursa, jadi baru bisa dijual begitu dibuka kembali."
     }
    ],
+   "pasar": "Pasar saham Indonesia naik minggu ini, tetapi masih lebih rendah dibanding rata-rata beberapa bulan dan setahun terakhir.",
    "perhatian": [
     {
      "lampu": "kuning",
-     "teks": "Sebagian besar uang ada di saham tambang dan komoditas. Nilainya ikut naik turun harga batu bara, emas, dan nikel dunia."
+     "teks": "Sebagian besar uang ada di saham tambang dan komoditas. Nilainya ikut naik turun harga batu bara, emas, nikel, dan sawit dunia."
     },
     {
      "lampu": "kuning",
@@ -159,10 +2451,1441 @@
      "teks": "Tidak ada saham yang dipegang masuk daftar pengawasan khusus bursa."
     }
    ],
-   "pasar": "Pasar saham Indonesia naik minggu ini, tetapi masih lebih rendah dibanding rata-rata setahun terakhir.",
    "rencana": [
-    "Senin, 16 November, membeli dua saham baru, yaitu TAPG (kebun kelapa sawit) dan AKRA (penyalur BBM dan bahan kimia), memakai uang tunai yang tersisa.",
+    "Senin, 16 November, membeli TAPG 11 lot dan AKRA 17 lot memakai uang tunai yang tersisa. Setelah itu uang tunai tinggal sekitar 2% untuk biaya transaksi.",
     "Menjual PPGL begitu bursa membuka kembali perdagangannya."
+   ],
+   "peringkat": [
+    {
+     "no": 1,
+     "kode": "AADI",
+     "usaha": "Tambang batu bara",
+     "sektor": "Energi",
+     "skor": 68,
+     "pilih": true,
+     "alasan": "Dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 76,
+       "bintang": 4
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 79,
+       "bintang": 4
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 83,
+       "bintang": 4
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 45,
+       "bintang": 2
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 58,
+       "bintang": 3
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 63,
+       "bintang": 3
+      }
+     ],
+     "rasio": {
+      "per": 5.6,
+      "pbv": 1.22,
+      "roe": 21.8,
+      "der": 0.26,
+      "dy": 9.4,
+      "laba_q": 44.0
+     }
+    },
+    {
+     "no": 2,
+     "kode": "ADRO",
+     "usaha": "Batu bara",
+     "sektor": "Energi",
+     "skor": 65,
+     "pilih": false,
+     "alasan": "Jenis usahanya sama dengan AADI, aturan maksimal 1 saham per jenis usaha",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 42,
+       "bintang": 2
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 83,
+       "bintang": 4
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 90,
+       "bintang": 4
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 69,
+       "bintang": 3
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 65,
+       "bintang": 3
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 52,
+       "bintang": 3
+      }
+     ],
+     "rasio": {
+      "per": 6.2,
+      "pbv": 0.79,
+      "roe": 12.7,
+      "der": 0.33,
+      "dy": 10.6,
+      "laba_q": 79.0
+     }
+    },
+    {
+     "no": 3,
+     "kode": "INDF",
+     "usaha": "Makanan (Indomie dan lainnya)",
+     "sektor": "Barang Konsumen Primer",
+     "skor": 63,
+     "pilih": true,
+     "alasan": "Dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 40,
+       "bintang": 2
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 88,
+       "bintang": 4
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 41,
+       "bintang": 2
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 100,
+       "bintang": 5
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 55,
+       "bintang": 3
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 76,
+       "bintang": 4
+      }
+     ],
+     "rasio": {
+      "per": 5.8,
+      "pbv": 0.77,
+      "roe": 13.4,
+      "der": 0.6,
+      "dy": 4.1,
+      "laba_q": 54.0
+     }
+    },
+    {
+     "no": 4,
+     "kode": "AVIA",
+     "usaha": "Bahan bangunan",
+     "sektor": "Barang Baku",
+     "skor": 61,
+     "pilih": false,
+     "alasan": "Jenis usahanya sama dengan INTP, aturan maksimal 1 saham per jenis usaha. Nilainya sedikit di atas INTP, tetapi selisihnya belum cukup besar untuk mengganti. Dipantau minggu depan",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 59,
+       "bintang": 3
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 41,
+       "bintang": 2
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 79,
+       "bintang": 4
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 90,
+       "bintang": 4
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 50,
+       "bintang": 2
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 51,
+       "bintang": 3
+      }
+     ],
+     "rasio": {
+      "per": 9.7,
+      "pbv": 1.87,
+      "roe": 19.3,
+      "der": null,
+      "dy": 7.9,
+      "laba_q": null
+     }
+    },
+    {
+     "no": 5,
+     "kode": "PTBA",
+     "usaha": "Batu bara",
+     "sektor": "Energi",
+     "skor": 59,
+     "pilih": false,
+     "alasan": "Jenis usahanya sama dengan AADI, aturan maksimal 1 saham per jenis usaha",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 72,
+       "bintang": 4
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 72,
+       "bintang": 4
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 31,
+       "bintang": 2
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 86,
+       "bintang": 4
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 40,
+       "bintang": 2
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 52,
+       "bintang": 3
+      }
+     ],
+     "rasio": {
+      "per": 6.2,
+      "pbv": 1.36,
+      "roe": 21.9,
+      "der": 0.17,
+      "dy": 3.6,
+      "laba_q": 214.0
+     }
+    },
+    {
+     "no": 6,
+     "kode": "AKRA",
+     "usaha": "Penyalur BBM dan bahan kimia",
+     "sektor": "Energi",
+     "skor": 58,
+     "pilih": true,
+     "alasan": "Dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 67,
+       "bintang": 3
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 47,
+       "bintang": 2
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 76,
+       "bintang": 4
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 59,
+       "bintang": 3
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 49,
+       "bintang": 2
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 47,
+       "bintang": 2
+      }
+     ],
+     "rasio": {
+      "per": 8.5,
+      "pbv": 2.02,
+      "roe": 23.8,
+      "der": 0.27,
+      "dy": 7.8,
+      "laba_q": 66.0
+     }
+    },
+    {
+     "no": 7,
+     "kode": "TAPG",
+     "usaha": "Kebun kelapa sawit",
+     "sektor": "Barang Konsumen Primer",
+     "skor": 58,
+     "pilih": true,
+     "alasan": "Dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 81,
+       "bintang": 4
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 36,
+       "bintang": 2
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 93,
+       "bintang": 5
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 28,
+       "bintang": 1
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 38,
+       "bintang": 2
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 65,
+       "bintang": 3
+      }
+     ],
+     "rasio": {
+      "per": 8.1,
+      "pbv": 3.13,
+      "roe": 38.6,
+      "der": 0.08,
+      "dy": 12.0,
+      "laba_q": 49.0
+     }
+    },
+    {
+     "no": 8,
+     "kode": "ANTM",
+     "usaha": "Tambang emas dan nikel",
+     "sektor": "Barang Baku",
+     "skor": 57,
+     "pilih": true,
+     "alasan": "Dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 58,
+       "bintang": 3
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 62,
+       "bintang": 3
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 69,
+       "bintang": 3
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 24,
+       "bintang": 1
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 73,
+       "bintang": 4
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 45,
+       "bintang": 2
+      }
+     ],
+     "rasio": {
+      "per": 6.7,
+      "pbv": 1.7,
+      "roe": 25.4,
+      "der": 0.05,
+      "dy": 7.5,
+      "laba_q": 92.0
+     }
+    },
+    {
+     "no": 9,
+     "kode": "LSIP",
+     "usaha": "Perkebunan sawit",
+     "sektor": "Barang Konsumen Primer",
+     "skor": 56,
+     "pilih": false,
+     "alasan": "Jenis usahanya sama dengan TAPG, aturan maksimal 1 saham per jenis usaha",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 45,
+       "bintang": 2
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 97,
+       "bintang": 5
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 48,
+       "bintang": 2
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 66,
+       "bintang": 3
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 34,
+       "bintang": 2
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 67,
+       "bintang": 3
+      }
+     ],
+     "rasio": {
+      "per": 4.5,
+      "pbv": 0.72,
+      "roe": 15.7,
+      "der": null,
+      "dy": 5.2,
+      "laba_q": 60.0
+     }
+    },
+    {
+     "no": 10,
+     "kode": "ICBP",
+     "usaha": "Makanan dan minuman",
+     "sektor": "Barang Konsumen Primer",
+     "skor": 56,
+     "pilih": false,
+     "alasan": "Jenis usahanya sama dengan INDF, aturan maksimal 1 saham per jenis usaha",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 40,
+       "bintang": 2
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 55,
+       "bintang": 3
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 34,
+       "bintang": 2
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 93,
+       "bintang": 5
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 72,
+       "bintang": 4
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 40,
+       "bintang": 2
+      }
+     ],
+     "rasio": {
+      "per": 9.4,
+      "pbv": 1.41,
+      "roe": 15.0,
+      "der": 0.65,
+      "dy": 4.0,
+      "laba_q": 57.0
+     }
+    },
+    {
+     "no": 11,
+     "kode": "JPFA",
+     "usaha": "Ayam dan pakan ternak",
+     "sektor": "Barang Konsumen Primer",
+     "skor": 56,
+     "pilih": false,
+     "alasan": "Sektornya sudah terisi 2 saham",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 34,
+       "bintang": 2
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 93,
+       "bintang": 5
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 100,
+       "bintang": 5
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 34,
+       "bintang": 2
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 45,
+       "bintang": 2
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 40,
+       "bintang": 2
+      }
+     ],
+     "rasio": {
+      "per": 3.8,
+      "pbv": 0.85,
+      "roe": 22.4,
+      "der": 0.83,
+      "dy": 14.8,
+      "laba_q": -36.0
+     }
+    },
+    {
+     "no": 12,
+     "kode": "MYOR",
+     "usaha": "Makanan dan minuman",
+     "sektor": "Barang Konsumen Primer",
+     "skor": 55,
+     "pilih": false,
+     "alasan": "Jenis usahanya sama dengan INDF, aturan maksimal 1 saham per jenis usaha",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 62,
+       "bintang": 3
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 41,
+       "bintang": 2
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 38,
+       "bintang": 2
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 79,
+       "bintang": 4
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 48,
+       "bintang": 2
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 58,
+       "bintang": 3
+      }
+     ],
+     "rasio": {
+      "per": 9.8,
+      "pbv": 1.79,
+      "roe": 18.2,
+      "der": 0.25,
+      "dy": 4.0,
+      "laba_q": 5.0
+     }
+    },
+    {
+     "no": 13,
+     "kode": "INTP",
+     "usaha": "Semen (Tiga Roda)",
+     "sektor": "Barang Baku",
+     "skor": 54,
+     "pilih": true,
+     "alasan": "Dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 38,
+       "bintang": 2
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 71,
+       "bintang": 4
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 72,
+       "bintang": 4
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 76,
+       "bintang": 4
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 21,
+       "bintang": 1
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 72,
+       "bintang": 4
+      }
+     ],
+     "rasio": {
+      "per": 8.3,
+      "pbv": 0.9,
+      "roe": 10.9,
+      "der": 0.11,
+      "dy": 7.8,
+      "laba_q": 25.0
+     }
+    },
+    {
+     "no": 14,
+     "kode": "UNVR",
+     "usaha": "Makanan dan minuman",
+     "sektor": "Barang Konsumen Primer",
+     "skor": 54,
+     "pilih": false,
+     "alasan": "Jenis usahanya sama dengan INDF, aturan maksimal 1 saham per jenis usaha",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 76,
+       "bintang": 4
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 34,
+       "bintang": 2
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 97,
+       "bintang": 5
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 55,
+       "bintang": 3
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 18,
+       "bintang": 1
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 30,
+       "bintang": 2
+      }
+     ],
+     "rasio": {
+      "per": 6.9,
+      "pbv": 13.92,
+      "roe": 202.3,
+      "der": 0.13,
+      "dy": 13.1,
+      "laba_q": 4.0
+     }
+    },
+    {
+     "no": 15,
+     "kode": "TINS",
+     "usaha": "Tambang logam",
+     "sektor": "Barang Baku",
+     "skor": 53,
+     "pilih": false,
+     "alasan": "Jenis usahanya sama dengan ANTM, aturan maksimal 1 saham per jenis usaha",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 74,
+       "bintang": 4
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 62,
+       "bintang": 3
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 21,
+       "bintang": 1
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 21,
+       "bintang": 1
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 62,
+       "bintang": 3
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 68,
+       "bintang": 3
+      }
+     ],
+     "rasio": {
+      "per": 5.6,
+      "pbv": 2.27,
+      "roe": 40.4,
+      "der": 0.1,
+      "dy": 2.4,
+      "laba_q": 365.0
+     }
+    },
+    {
+     "no": 16,
+     "kode": "CPIN",
+     "usaha": "Ayam dan pakan ternak",
+     "sektor": "Barang Konsumen Primer",
+     "skor": 51,
+     "pilih": false,
+     "alasan": "Sektornya sudah terisi 2 saham",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 38,
+       "bintang": 2
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 84,
+       "bintang": 4
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 62,
+       "bintang": 3
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 52,
+       "bintang": 3
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 39,
+       "bintang": 2
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 45,
+       "bintang": 2
+      }
+     ],
+     "rasio": {
+      "per": 5.4,
+      "pbv": 1.11,
+      "roe": 20.5,
+      "der": 0.31,
+      "dy": 7.3,
+      "laba_q": 1.0
+     }
+    },
+    {
+     "no": 17,
+     "kode": "ULTJ",
+     "usaha": "Makanan dan minuman",
+     "sektor": "Barang Konsumen Primer",
+     "skor": 50,
+     "pilih": false,
+     "alasan": "Jenis usahanya sama dengan INDF, aturan maksimal 1 saham per jenis usaha",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 52,
+       "bintang": 3
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 24,
+       "bintang": 1
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 55,
+       "bintang": 3
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 72,
+       "bintang": 4
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 45,
+       "bintang": 2
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 52,
+       "bintang": 3
+      }
+     ],
+     "rasio": {
+      "per": 11.9,
+      "pbv": 2.62,
+      "roe": 21.9,
+      "der": null,
+      "dy": 6.2,
+      "laba_q": 7.0
+     }
+    },
+    {
+     "no": 18,
+     "kode": "MIKA",
+     "usaha": "Rumah sakit",
+     "sektor": "Kesehatan",
+     "skor": 49,
+     "pilih": false,
+     "alasan": "Nilainya belum cukup tinggi untuk menggeser saham yang dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 66,
+       "bintang": 3
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 24,
+       "bintang": 1
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 28,
+       "bintang": 1
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 83,
+       "bintang": 4
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 57,
+       "bintang": 3
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 12,
+       "bintang": 1
+      }
+     ],
+     "rasio": {
+      "per": 12.5,
+      "pbv": 2.33,
+      "roe": 18.6,
+      "der": 0.01,
+      "dy": 3.3,
+      "laba_q": 6.0
+     }
+    },
+    {
+     "no": 19,
+     "kode": "MAPA",
+     "usaha": "Ritel",
+     "sektor": "Barang Konsumen Non-Primer",
+     "skor": 48,
+     "pilih": false,
+     "alasan": "Nilainya belum cukup tinggi untuk menggeser saham yang dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 60,
+       "bintang": 3
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 53,
+       "bintang": 3
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 14,
+       "bintang": 1
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 41,
+       "bintang": 2
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 49,
+       "bintang": 2
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 72,
+       "bintang": 4
+      }
+     ],
+     "rasio": {
+      "per": 8.6,
+      "pbv": 1.69,
+      "roe": 19.8,
+      "der": 0.06,
+      "dy": 0.7,
+      "laba_q": 16.0
+     }
+    },
+    {
+     "no": 20,
+     "kode": "CMRY",
+     "usaha": "Makanan dan minuman",
+     "sektor": "Barang Konsumen Primer",
+     "skor": 48,
+     "pilih": false,
+     "alasan": "Jenis usahanya sama dengan INDF, aturan maksimal 1 saham per jenis usaha",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 60,
+       "bintang": 3
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 7,
+       "bintang": 1
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 45,
+       "bintang": 2
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 62,
+       "bintang": 3
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 51,
+       "bintang": 3
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 58,
+       "bintang": 3
+      }
+     ],
+     "rasio": {
+      "per": 15.8,
+      "pbv": 4.93,
+      "roe": 31.1,
+      "der": null,
+      "dy": 4.7,
+      "laba_q": -10.0
+     }
+    },
+    {
+     "no": 21,
+     "kode": "AMRT",
+     "usaha": "Ritel",
+     "sektor": "Barang Konsumen Primer",
+     "skor": 48,
+     "pilih": false,
+     "alasan": "Sektornya sudah terisi 2 saham",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 66,
+       "bintang": 3
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 26,
+       "bintang": 1
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 52,
+       "bintang": 3
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 31,
+       "bintang": 2
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 60,
+       "bintang": 3
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 32,
+       "bintang": 2
+      }
+     ],
+     "rasio": {
+      "per": 12.4,
+      "pbv": 2.39,
+      "roe": 19.2,
+      "der": 0.1,
+      "dy": 5.4,
+      "laba_q": -12.0
+     }
+    },
+    {
+     "no": 22,
+     "kode": "TLKM",
+     "usaha": "Telekomunikasi",
+     "sektor": "Infrastruktur",
+     "skor": 46,
+     "pilih": false,
+     "alasan": "Nilainya belum cukup tinggi untuk menggeser saham yang dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 33,
+       "bintang": 2
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 34,
+       "bintang": 2
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 86,
+       "bintang": 4
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 38,
+       "bintang": 2
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 57,
+       "bintang": 3
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 25,
+       "bintang": 1
+      }
+     ],
+     "rasio": {
+      "per": 12.4,
+      "pbv": 1.75,
+      "roe": 14.1,
+      "der": 0.56,
+      "dy": 10.3,
+      "laba_q": -16.0
+     }
+    },
+    {
+     "no": 23,
+     "kode": "ASII",
+     "usaha": "Otomotif dan konglomerasi",
+     "sektor": "Perindustrian",
+     "skor": 44,
+     "pilih": false,
+     "alasan": "Nilainya belum cukup tinggi untuk menggeser saham yang dipilih",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 22,
+       "bintang": 1
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 72,
+       "bintang": 4
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 59,
+       "bintang": 3
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 48,
+       "bintang": 2
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 30,
+       "bintang": 1
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 60,
+       "bintang": 3
+      }
+     ],
+     "rasio": {
+      "per": 7.4,
+      "pbv": 0.94,
+      "roe": 12.6,
+      "der": 0.39,
+      "dy": 7.1,
+      "laba_q": 1.0
+     }
+    },
+    {
+     "no": 24,
+     "kode": "ARCI",
+     "usaha": "Tambang logam",
+     "sektor": "Barang Baku",
+     "skor": 39,
+     "pilih": false,
+     "alasan": "Jenis usahanya sama dengan ANTM, aturan maksimal 1 saham per jenis usaha",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 48,
+       "bintang": 2
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 26,
+       "bintang": 1
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 17,
+       "bintang": 1
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 14,
+       "bintang": 1
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 62,
+       "bintang": 3
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 63,
+       "bintang": 3
+      }
+     ],
+     "rasio": {
+      "per": 9.7,
+      "pbv": 3.27,
+      "roe": 33.7,
+      "der": 1.19,
+      "dy": 2.2,
+      "laba_q": 122.0
+     }
+    },
+    {
+     "no": 25,
+     "kode": "AMMN",
+     "usaha": "Tambang logam",
+     "sektor": "Barang Baku",
+     "skor": 39,
+     "pilih": false,
+     "alasan": "Jenis usahanya sama dengan ANTM, aturan maksimal 1 saham per jenis usaha",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 44,
+       "bintang": 2
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 28,
+       "bintang": 1
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 5,
+       "bintang": 1
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 17,
+       "bintang": 1
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 81,
+       "bintang": 4
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 43,
+       "bintang": 2
+      }
+     ],
+     "rasio": {
+      "per": 11.9,
+      "pbv": 2.41,
+      "roe": 20.2,
+      "der": 0.91,
+      "dy": null,
+      "laba_q": 1467.0
+     }
+    },
+    {
+     "no": 26,
+     "kode": "ENRG",
+     "usaha": "Energi lainnya",
+     "sektor": "Energi",
+     "skor": 37,
+     "pilih": false,
+     "alasan": "Jenis usahanya sama dengan AKRA, aturan maksimal 1 saham per jenis usaha",
+     "faktor": [
+      {
+       "kode": "q",
+       "faktor": "Keuangan sehat",
+       "nilai": 27,
+       "bintang": 1
+      },
+      {
+       "kode": "v",
+       "faktor": "Harga saham wajar",
+       "nilai": 36,
+       "bintang": 2
+      },
+      {
+       "kode": "inc",
+       "faktor": "Rajin bagi dividen",
+       "nilai": 5,
+       "bintang": 1
+      },
+      {
+       "kode": "lr",
+       "faktor": "Harga cenderung stabil",
+       "nilai": 3,
+       "bintang": 1
+      },
+      {
+       "kode": "pros",
+       "faktor": "Prospek laba",
+       "nilai": 82,
+       "bintang": 4
+      },
+      {
+       "kode": "mf",
+       "faktor": "Tren harga dan minat beli",
+       "nilai": 77,
+       "bintang": 4
+      }
+     ],
+     "rasio": {
+      "per": 14.2,
+      "pbv": 1.51,
+      "roe": 10.6,
+      "der": 0.54,
+      "dy": null,
+      "laba_q": 51.0
+     }
+    }
    ]
   }
  ]
