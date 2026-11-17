@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Laporan Mingguan Portofolio Saham</title>
+<style>
+:root{--bg:#f7f7f5;--card:#fff;--ink:#1d1d1b;--mute:#6b6b66;--line:#e4e3de;--acc:#1f5f8b;--pos:#1e7a46;--neg:#b3362f;--warn:#9a6a00}
+@media (prefers-color-scheme:dark){:root{--bg:#161615;--card:#1f1f1d;--ink:#ecebe6;--mute:#a3a29c;--line:#34332f;--acc:#6fb0dd;--pos:#5cc48a;--neg:#e5736b;--warn:#d9a93c}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{background:var(--card);border-bottom:1px solid var(--line);padding:16px 20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+h1{font-size:18px;margin:0}
+.sub{color:var(--mute);font-size:13px}
+select{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink)}
+nav{display:flex;gap:4px;overflow-x:auto;padding:0 20px;background:var(--card);border-bottom:1px solid var(--line)}
+nav button{font:inherit;background:none;border:0;border-bottom:2px solid transparent;padding:10px 12px;color:var(--mute);cursor:pointer;white-space:nowrap}
+nav button.on{color:var(--ink);border-color:var(--acc)}
+main{max-width:1100px;margin:0 auto;padding:20px}
+.draft{background:#fff3cd;color:#664d03;padding:8px 20px;font-size:13px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:16px}
+.kpi,.box{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px}
+.kpi .l{color:var(--mute);font-size:12px}
+.kpi .v{font-size:20px;font-weight:600;font-variant-numeric:tabular-nums}
+.kpi .d{font-size:12px;color:var(--mute)}
+.box{margin-bottom:16px}
+.box h2{font-size:15px;margin:0 0 10px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.box h2 a{font-size:12px;font-weight:400;color:var(--acc);cursor:pointer;text-decoration:none}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{color:var(--mute);font-weight:500;white-space:nowrap}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.tot td{font-weight:600}
+.pos{color:var(--pos)}.neg{color:var(--neg)}.warn{color:var(--warn)}
+.badge{display:inline-block;padding:1px 8px;border-radius:10px;font-size:12px;border:1px solid currentColor}
+.ok{color:var(--pos);font-weight:600}.bad{color:var(--neg);font-weight:600}
+p.lead{font-size:15px;margin:0}
+footer{color:var(--mute);font-size:12px;text-align:center;padding:24px}
+svg text{fill:var(--mute);font-size:11px}
+.leg{display:flex;gap:16px;font-size:12px;color:var(--mute);margin-top:6px}
+.leg i{display:inline-block;width:14px;height:3px;vertical-align:middle;margin-right:6px}
+</style>
+</head>
+<body>
+<div id="draftbar" class="draft" hidden>Pratinjau draf, belum dirilis ke pemilik dana.</div>
+<header>
+  <div><h1>Laporan Mingguan Portofolio Saham</h1><div class="sub" id="sub"></div></div>
+  <label class="sub">Minggu <select id="minggu"></select></label>
+</header>
+<nav id="tabs"></nav>
+<main id="isi"><p>Memuat data...</p></main>
+<footer>Disusun dari aturan tertulis. Bukan nasihat investasi. Tiap tabel bisa diunduh sebagai CSV.</footer>
+<script>
+(function(){
+const q=new URLSearchParams(location.search);
+const isDraft=q.has('draft');
+const SRC=isDraft?'data/draft.json':'data/paket.json';
+const fRp=v=>v==null?'–':(v<0?'−':'')+'Rp'+Math.abs(Math.round(v)).toLocaleString('id-ID');
+const fN=(v,d=0)=>v==null?'–':Number(v).toLocaleString('id-ID',{minimumFractionDigits:d,maximumFractionDigits:d});
+const fP=(v,d=2)=>v==null?'–':(v>0?'+':'')+(v*100).toLocaleString('id-ID',{minimumFractionDigits:d,maximumFractionDigits:d})+'%';
+const cls=v=>v>0?'pos':v<0?'neg':'';
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fTgl=s=>{if(!s)return '–';const d=new Date(s+'T00:00:00');return d.toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'})};
+let D,W,TAB='ringkasan';
+const TABS=[['ringkasan','Ringkasan'],['portofolio','Portofolio'],['transaksi','Transaksi dan kepatuhan'],['pasar','Pasar dan risiko'],['metode','Metode dan sumber']];
+const CSV={};
+function tabel(id,judul,cols,rows,opt={}){
+  CSV[id]={cols,rows};
+  let h=`<div class="box"><h2>${esc(judul)}<a data-csv="${id}">Unduh CSV</a></h2>`;
+  if(opt.note)h+=`<p class="sub" style="margin:-4px 0 8px">${opt.note}</p>`;
+  if(!rows.length)return h+'<p class="sub">Tidak ada data untuk minggu ini.</p></div>';
+  h+='<div class="wrap"><table><thead><tr>'+cols.map(c=>`<th${c.n?' style="text-align:right"':''}>${esc(c.h)}</th>`).join('')+'</tr></thead><tbody>';
+  for(const r of rows){h+=`<tr${opt.rowCls?` class="${opt.rowCls(r)}"`:''}>`+cols.map(c=>{const raw=c.k?r[c.k]:null;const v=c.f?c.f(raw,r):esc(raw??'');return `<td${c.n?' class="n"':''}>${v}</td>`}).join('')+'</tr>'}
+  return h+'</tbody></table></div></div>';
+}
+function unduh(id){
+  const {cols,rows}=CSV[id];const keys=[...new Set(rows.flatMap(r=>Object.keys(r)))];
+  const s=[keys.join(',')].concat(rows.map(r=>keys.map(k=>{let v=r[k];if(v==null)return '';v=String(v);return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v}).join(','))).join('\n');
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['﻿'+s],{type:'text/csv'}));a.download=`${id}-${W}.csv`;a.click();
+}
+const per=t=>(D[t]||[]).filter(r=>r.minggu===W);
+function grafik(R){
+  const pts=D.nilai_harian.filter(r=>r.tanggal<=R.tanggal_akhir);
+  if(pts.length<2)return '';
+  const a0=pts[0].nilai_total,b0=pts[0].ihsg;
+  const A=pts.map(p=>p.nilai_total/a0*100),B=pts.map(p=>p.ihsg/b0*100);
+  const all=A.concat(B),mn=Math.min(...all)-1,mx=Math.max(...all)+1;
+  const w=700,h=220,pl=40,pr=10,pt=10,pb=30;
+  const x=i=>pl+i*(w-pl-pr)/(pts.length-1),y=v=>pt+(mx-v)*(h-pt-pb)/(mx-mn);
+  const line=(arr,c)=>`<polyline fill="none" stroke="${c}" stroke-width="2" points="${arr.map((v,i)=>x(i).toFixed(1)+','+y(v).toFixed(1)).join(' ')}"/>`;
+  let g='';for(let k=0;k<5;k++){const v=mn+(mx-mn)*k/4;g+=`<line x1="${pl}" x2="${w-pr}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="${pl-6}" y="${y(v)+4}" text-anchor="end">${fN(v,0)}</text>`}
+  const step=Math.ceil(pts.length/7);pts.forEach((p,i)=>{if(i%step===0||i===pts.length-1){const d=new Date(p.tanggal+'T00:00:00');g+=`<text x="${x(i)}" y="${h-10}" text-anchor="middle">${d.getDate()}/${d.getMonth()+1}</text>`}});
+  return `<div class="box"><h2>Nilai portofolio dan IHSG (indeks, ${fTgl(pts[0].tanggal)} = 100)</h2><svg viewBox="0 0 ${w} ${h}" width="100%" role="img" aria-label="Grafik nilai portofolio dan IHSG">${g}${line(B,'var(--mute)')}${line(A,'var(--acc)')}</svg><div class="leg"><span><i style="background:var(--acc)"></i>Portofolio</span><span><i style="background:var(--mute)"></i>IHSG</span></div></div>`;
+}
+function rekon(){
+  const rows=per('rekonsiliasi').sort((a,b)=>a.urutan-b.urutan);if(!rows.length)return '';
+  const awal=rows.find(r=>r.jenis==='awal'),akhir=rows.find(r=>r.jenis==='akhir');
+  const hit=awal.nilai+rows.filter(r=>r.jenis==='komponen').reduce((s,r)=>s+r.nilai,0);const sel=akhir.nilai-hit;
+  const t=tabel('rekonsiliasi','Rekonsiliasi nilai',[{h:'Komponen',k:'komponen'},{h:'Nilai',k:'nilai',n:1,f:(v,r)=>r.jenis==='komponen'?`<span class="${cls(v)}">${v>0?'+':''}${fRp(v)}</span>`:fRp(v)},{h:'Keterangan',k:'keterangan'}],rows,{rowCls:r=>r.jenis!=='komponen'?'tot':''});
+  return t.replace('</table>',`</table><p class="sub" style="margin:8px 0 0">Cek: nilai awal + komponen = ${fRp(hit)}, selisih terhadap nilai akhir ${fRp(sel)} → <span class="${sel===0?'ok':'bad'}">${sel===0?'Seimbang':'Tidak seimbang'}</span></p>`);
+}
+function pengecualian(){
+  return tabel('pengecualian','Pengecualian',[{h:'ID',k:'id',f:v=>`<span style="white-space:nowrap">${esc(v)}</span>`},{h:'Uraian',k:'uraian'},{h:'Dampak',k:'dampak',n:1,f:v=>v==null?'–':`<span class="${cls(v)}">${fRp(v)}</span>`},{h:'Status',k:'status',f:v=>`<span class="badge ${v==='Selesai'?'pos':'warn'}">${esc(v)}</span>`},{h:'Tindak lanjut',k:'tindak_lanjut'}],per('pengecualian'));
+}
+function render(){
+  const R=D.ringkasan.find(r=>r.minggu===W);const T0=D.kebijakan.find(k=>k.kode==='titik_awal_nilai'),I0=D.kebijakan.find(k=>k.kode==='titik_awal_ihsg');
+  document.getElementById('sub').textContent=`${R.label} · disusun ${fTgl(R.tanggal_laporan)} · ${R.fase}`;
+  document.getElementById('tabs').innerHTML=TABS.map(([k,l])=>`<button data-tab="${k}" class="${k===TAB?'on':''}">${l}</button>`).join('');
+  let h='';
+  if(TAB==='ringkasan'){
+    const rM=R.nilai_akhir/R.nilai_awal-1,iM=R.ihsg_akhir/R.ihsg_awal-1;
+    const rA=T0?R.nilai_akhir/T0.nilai-1:null,iA=I0?R.ihsg_akhir/I0.nilai-1:null;
+    h+=`<div class="box"><p class="lead">${esc(R.kesimpulan)}</p></div><div class="kpis">
+    <div class="kpi"><div class="l">Nilai akhir</div><div class="v">${fRp(R.nilai_akhir)}</div><div class="d">per ${fTgl(R.tanggal_akhir)}</div></div>
+    <div class="kpi"><div class="l">Perubahan minggu ini</div><div class="v ${cls(rM)}">${fP(rM)}</div><div class="d">IHSG ${fP(iM)}</div></div>
+    <div class="kpi"><div class="l">Sejak titik awal</div><div class="v ${cls(rA)}">${fP(rA)}</div><div class="d">IHSG ${fP(iA)} · titik awal ${fTgl(D.kebijakan.find(k=>k.kode==='titik_awal_tanggal')?.nilai_teks)}</div></div>
+    <div class="kpi"><div class="l">Kas akhir</div><div class="v">${fRp(R.kas_akhir)}</div><div class="d">${fP(R.kas_akhir/R.nilai_akhir,1).replace('+','')} dari nilai</div></div>
+    <div class="kpi"><div class="l">Jumlah saham</div><div class="v">${fN(R.jumlah_saham)}</div><div class="d">${fRp(R.nilai_awal)} di awal minggu</div></div></div>`;
+    h+=rekon()+grafik(R)+pengecualian();
+  }else if(TAB==='portofolio'){
+    const P=per('posisi');const tot=P.reduce((s,r)=>s+r.nilai,0)+R.kas_akhir;
+    h+=tabel('posisi','Isi portofolio akhir minggu',[{h:'Saham',k:'kode',f:v=>`<b>${esc(v)}</b>`},{h:'Porsi',k:'porsi'},{h:'Lot',k:'lot',n:1,f:v=>fN(v)},{h:'Harga rata-rata',k:'harga_rata',n:1,f:v=>fN(v,2)},{h:'Harga akhir',k:'harga_akhir',n:1,f:v=>fN(v)},{h:'Nilai',k:'nilai',n:1,f:v=>fRp(v)},{h:'Bobot',k:'nilai',n:1,f:v=>fP(v/tot,1).replace('+','')},{h:'Untung rugi',k:'nilai',n:1,f:(v,r)=>{const c=r.lot*100*r.harga_rata;const u=v-c;return `<span class="${cls(u)}">${fRp(u)} (${fP(u/c,1)})</span>`}},{h:'Tindakan',k:'tindakan'},{h:'Catatan',k:'catatan'}],P,{note:`Total saham ${fRp(tot-R.kas_akhir)} + kas ${fRp(R.kas_akhir)} = ${fRp(tot)}. <span class="${tot===R.nilai_akhir?'ok':'bad'}">${tot===R.nilai_akhir?'Cocok dengan nilai akhir':'Selisih '+fRp(R.nilai_akhir-tot)+' terhadap nilai akhir'}</span>. Untung rugi dihitung dari harga rata-rata, sebelum biaya jual.`});
+    h+=tabel('susunan_target','Susunan target porsi inti',[{h:'Saham',k:'kode',f:v=>`<b>${esc(v)}</b>`},{h:'Sektor',k:'sektor'},{h:'Tema',k:'tema'},{h:'Lot',k:'lot',n:1,f:v=>fN(v)},{h:'Harga acuan',k:'harga_acuan',n:1,f:v=>fN(v)},{h:'Batas beli',k:'batas_harga',n:1,f:v=>fN(v)},{h:'Nilai',k:'nilai',n:1,f:v=>fRp(v)},{h:'Alasan',k:'alasan'}],per('susunan_target'));
+  }else if(TAB==='transaksi'){
+    const X=per('transaksi');
+    h+=tabel('transaksi','Transaksi tereksekusi',[{h:'No',k:'no',n:1},{h:'Tanggal',k:'tanggal',f:fTgl},{h:'Saham',k:'kode',f:v=>`<b>${esc(v)}</b>`},{h:'Sisi',k:'sisi'},{h:'Lot',k:'lot',n:1,f:v=>fN(v)},{h:'Harga',k:'harga',n:1,f:v=>fN(v)},{h:'Nilai',k:'nilai',n:1,f:v=>fRp(v)},{h:'Biaya',k:'biaya',n:1,f:v=>fRp(v)},{h:'Keterangan',k:'keterangan'}],X,{note:X.length?`Total biaya ${fRp(X.reduce((s,r)=>s+(r.biaya||0),0))} dari ${X.length} order.`:''});
+    h+=tabel('rencana_transaksi','Rencana transaksi',[{h:'No',k:'no',n:1},{h:'Tanggal',k:'tanggal_rencana',f:fTgl},{h:'Saham',k:'kode',f:v=>`<b>${esc(v)}</b>`},{h:'Sisi',k:'sisi'},{h:'Lot',k:'lot',n:1,f:v=>fN(v)},{h:'Harga acuan',k:'harga_acuan',n:1,f:v=>fN(v)},{h:'Batas',k:'batas_harga',n:1,f:v=>fN(v)},{h:'Perkiraan nilai',k:'nilai_perkiraan',n:1,f:v=>fRp(v)},{h:'Aturan',k:'aturan'}],per('rencana_transaksi'));
+    h+=tabel('kepatuhan','Kepatuhan terhadap aturan',[{h:'No',k:'no',n:1},{h:'Aturan',k:'aturan'},{h:'Batas',k:'batas'},{h:'Kondisi',k:'kondisi'},{h:'Status',k:'status',f:v=>`<span class="badge ${v==='Patuh'?'pos':v==='Belum patuh'?'warn':''}">${esc(v)}</span>`},{h:'Catatan',k:'catatan'}],per('kepatuhan'));
+  }else if(TAB==='pasar'){
+    h+=tabel('pasar','Indikator pasar',[{h:'Indikator',k:'indikator'},{h:'Nilai',k:'nilai',n:1,f:(v,r)=>r.satuan==='persen'?fP(v):r.satuan==='rupiah'?fRp(v):fN(v,r.satuan==='poin'?2:0)},{h:'Per tanggal',k:'per_tanggal',f:fTgl},{h:'Sumber',k:'sumber',f:(v,r)=>r.url?`<a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(v)}</a>`:esc(v)}],per('pasar'));
+    h+=tabel('risiko','Risiko yang dipantau',[{h:'Risiko',k:'risiko',f:v=>`<b>${esc(v)}</b>`},{h:'Alasan',k:'alasan'},{h:'Dipantau',k:'dipantau'},{h:'Sumber',k:'sumber',f:(v,r)=>r.url?`<a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(v||'Tautan')}</a>`:esc(v)}],per('risiko'));
+    h+=tabel('rencana','Rencana minggu depan',[{h:'No',k:'no',n:1},{h:'Rencana',k:'rencana'}],per('rencana'));
+  }else{
+    h+=tabel('sumber_data','Sumber data dan tingkat keyakinan',[{h:'Data',k:'data'},{h:'Sumber',k:'sumber'},{h:'Cara',k:'cara'},{h:'Per tanggal',k:'per_tanggal',f:fTgl},{h:'Keyakinan',k:'keyakinan'}],per('sumber_data'));
+    h+=tabel('kebijakan','Parameter aturan yang berlaku',[{h:'Parameter',k:'parameter'},{h:'Nilai',k:'nilai_teks'},{h:'Acuan',k:'acuan'}],D.kebijakan);
+    h+=`<div class="box"><h2>Definisi dan batasan</h2><table><tbody>
+    <tr><td><b>Perubahan minggu ini</b></td><td>Nilai akhir dibagi nilai awal minggu, dikurangi 1. Nilai adalah total equity Stockbit (saham dinilai harga penutupan ditambah kas).</td></tr>
+    <tr><td><b>Sejak titik awal</b></td><td>Nilai akhir dibagi nilai titik awal pengukuran, dikurangi 1. IHSG dihitung dengan cara yang sama.</td></tr>
+    <tr><td><b>Bobot</b></td><td>Nilai pasar saham dibagi nilai akhir portofolio (saham ditambah kas).</td></tr>
+    <tr><td><b>Rekonsiliasi</b></td><td>Nilai awal + pergerakan harga + dividen − biaya ± setoran atau penarikan ± selisih belum terjelaskan = nilai akhir. Sisa yang belum terjelaskan dibuka sebagai pengecualian.</td></tr>
+    <tr><td><b>Batasan</b></td><td>Order dieksekusi manual oleh pengelola. Laporan disusun dari aturan tertulis dan bukan nasihat investasi. Angka minggu lama tidak diubah setelah terbit.</td></tr>
+    </tbody></table></div>`;
+  }
+  document.getElementById('isi').innerHTML=h;
+}
+document.addEventListener('click',e=>{const t=e.target.closest('[data-tab]');if(t){TAB=t.dataset.tab;render();return}const c=e.target.closest('[data-csv]');if(c)unduh(c.dataset.csv)});
+document.getElementById('minggu').addEventListener('change',e=>{W=e.target.value;render()});
+fetch(SRC,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}).then(d=>{
+  D=d;const ms=D.ringkasan.map(r=>r.minggu);W=ms[ms.length-1];
+  document.getElementById('minggu').innerHTML=D.ringkasan.slice().reverse().map(r=>`<option value="${r.minggu}">${r.minggu} · ${esc(r.label)}</option>`).join('');
+  document.getElementById('draftbar').hidden=!isDraft;render();
+}).catch(e=>{document.getElementById('isi').innerHTML=`<p>Data belum tersedia (${esc(e.message)}).</p>`});
+})();
+</script>
+</body>
+</html>
