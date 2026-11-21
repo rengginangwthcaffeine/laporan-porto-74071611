@@ -1,0 +1,2437 @@
+{
+ "ringkasan": [
+  {
+   "minggu": "2026-W45",
+   "label": "2–6 November 2026",
+   "tanggal_awal": "2026-10-30",
+   "tanggal_akhir": "2026-11-06",
+   "tanggal_laporan": "2026-11-08",
+   "fase": "Transisi ke strategi berbasis aturan",
+   "nilai_awal": 12352300,
+   "nilai_akhir": 12209100,
+   "ihsg_awal": 5057.05,
+   "ihsg_akhir": 5050.43,
+   "kas_akhir": 75600,
+   "jumlah_saham": 16,
+   "gerbang_trading": "Tertutup",
+   "kesimpulan": "Nilai portofolio turun 1,16%, lebih dalam dari IHSG yang turun 0,13%. Pergerakan harga saham sebenarnya menambah Rp45.000, tetapi kas berkurang Rp188.200 tanpa transaksi tercatat dan sedang ditelusuri. Minggu ini menjadi titik awal pengukuran strategi baru."
+  },
+  {
+   "minggu": "2026-W46",
+   "label": "9–13 November 2026",
+   "tanggal_awal": "2026-11-06",
+   "tanggal_akhir": "2026-11-13",
+   "tanggal_laporan": "2026-11-14",
+   "fase": "Porsi inti berbasis aturan, menuju 6 saham",
+   "nilai_awal": 12209100,
+   "nilai_akhir": 12758456,
+   "ihsg_awal": 5050.43,
+   "ihsg_akhir": 5344.41,
+   "kas_akhir": 4463956,
+   "jumlah_saham": 5,
+   "gerbang_trading": "Tidak berlaku sejak 13 November",
+   "kesimpulan": "Nilai portofolio naik 4,50% menjadi Rp12.758.456, di bawah kenaikan IHSG 5,82%. Pergerakan harga menambah Rp622.600, biaya transaksi pindahan mengurangi Rp63.242, dan Rp10.002 kas belum terjelaskan. Pindahan 9 November selesai, lalu BBRI, BFIN, dan HMSP dijual 13 November karena aturan baru dan status HSC, diganti INTP dan ANTM. Kas Rp4,46 juta dibelikan AKRA dan TAPG mulai Senin 16 November."
+  },
+  {
+   "minggu": "2026-W47",
+   "label": "16–20 November 2026",
+   "tanggal_awal": "2026-11-13",
+   "tanggal_akhir": "2026-11-20",
+   "tanggal_laporan": "2026-11-21",
+   "fase": "Porsi inti 6 saham berbasis aturan",
+   "nilai_awal": 12758456,
+   "nilai_akhir": 12418144,
+   "ihsg_awal": 5344.41,
+   "ihsg_akhir": 5146.33,
+   "kas_akhir": 249644,
+   "jumlah_saham": 6,
+   "gerbang_trading": "Tidak berlaku sejak 13 November",
+   "kesimpulan": "Nilai portofolio turun 2,67% menjadi Rp12.418.144, lebih kecil dari penurunan IHSG 3,71%. Pergerakan harga mengurangi Rp334.000 dan biaya pembelian mengurangi Rp6.312, tanpa selisih kas baru. TAPG 11 lot dan AKRA 17 lot terisi 16 November, jadi porsi inti lengkap 6 saham dengan kas 2,0% equity. Skor ulang 21 November tidak menghasilkan penggantian."
+  }
+ ],
+ "kebijakan": [
+  {
+   "kode": "titik_awal_tanggal",
+   "parameter": "Tanggal titik awal pengukuran",
+   "nilai": null,
+   "nilai_teks": "2026-11-06",
+   "acuan": "Spesifikasi v3.3, bagian 1"
+  },
+  {
+   "kode": "titik_awal_nilai",
+   "parameter": "Nilai portofolio di titik awal (Rp)",
+   "nilai": 12209100,
+   "nilai_teks": "12.209.100",
+   "acuan": "Spesifikasi v3.3, bagian 1"
+  },
+  {
+   "kode": "titik_awal_ihsg",
+   "parameter": "IHSG di titik awal",
+   "nilai": 5050.43,
+   "nilai_teks": "5.050,43",
+   "acuan": "Yahoo Finance ^JKSE, 6 November 2026"
+  },
+  {
+   "kode": "porsi_inti",
+   "parameter": "Porsi inti dari nilai portofolio",
+   "nilai": 1.0,
+   "nilai_teks": "Seluruh equity dikurangi kas penyangga sekitar 2%",
+   "acuan": "Spesifikasi v3.3, bagian 1. Berlaku 13 November 2026, sebelumnya 75%"
+  },
+  {
+   "kode": "porsi_trading",
+   "parameter": "Porsi trading dari nilai portofolio",
+   "nilai": 0.0,
+   "nilai_teks": "Dihapus",
+   "acuan": "Spesifikasi v3.3, bagian 1. Berlaku 13 November 2026, sebelumnya 25%"
+  },
+  {
+   "kode": "jumlah_inti",
+   "parameter": "Jumlah saham inti",
+   "nilai": 6,
+   "nilai_teks": "6 saham",
+   "acuan": "Spesifikasi v3.3, bagian 4. Berlaku 13 November 2026, sebelumnya 5 saham"
+  },
+  {
+   "kode": "bobot_min",
+   "parameter": "Bobot minimum per saham inti",
+   "nilai": 0.12,
+   "nilai_teks": "12% porsi inti",
+   "acuan": "Spesifikasi v3.3, bagian 4. Berlaku 13 November 2026, sebelumnya 15%"
+  },
+  {
+   "kode": "bobot_maks",
+   "parameter": "Bobot maksimum per saham inti",
+   "nilai": 0.22,
+   "nilai_teks": "22% porsi inti",
+   "acuan": "Spesifikasi v3.3, bagian 4. Berlaku 13 November 2026, sebelumnya 25%"
+  },
+  {
+   "kode": "maks_sektor",
+   "parameter": "Saham inti per sektor",
+   "nilai": 2,
+   "nilai_teks": "Maksimal 2",
+   "acuan": "Spesifikasi v3.3, bagian 4"
+  },
+  {
+   "kode": "maks_tema",
+   "parameter": "Saham inti per tema usaha",
+   "nilai": 1,
+   "nilai_teks": "Maksimal 1",
+   "acuan": "Spesifikasi v3.3, bagian 4"
+  },
+  {
+   "kode": "batas_ganti",
+   "parameter": "Penggantian saham inti",
+   "nilai": 1,
+   "nilai_teks": "Maksimal 1 per bulan",
+   "acuan": "Spesifikasi v3.3, bagian 5"
+  },
+  {
+   "kode": "risiko_trade",
+   "parameter": "Risiko per transaksi trading",
+   "nilai": null,
+   "nilai_teks": "Tidak berlaku",
+   "acuan": "Spesifikasi v3.3, bagian 6, aturan trading diarsipkan sejak 13 November 2026"
+  },
+  {
+   "kode": "maks_posisi",
+   "parameter": "Posisi trading bersamaan",
+   "nilai": null,
+   "nilai_teks": "Tidak berlaku",
+   "acuan": "Spesifikasi v3.3, bagian 6, aturan trading diarsipkan sejak 13 November 2026"
+  },
+  {
+   "kode": "rem_trading",
+   "parameter": "Rem darurat modal trading",
+   "nilai": null,
+   "nilai_teks": "Tidak berlaku",
+   "acuan": "Spesifikasi v3.3, bagian 6, aturan trading diarsipkan sejak 13 November 2026"
+  },
+  {
+   "kode": "biaya_beli",
+   "parameter": "Biaya beli",
+   "nilai": 0.0015,
+   "nilai_teks": "0,15%",
+   "acuan": "Riwayat transaksi Stockbit"
+  },
+  {
+   "kode": "biaya_jual",
+   "parameter": "Biaya jual termasuk PPh final",
+   "nilai": 0.0025,
+   "nilai_teks": "0,25%",
+   "acuan": "Riwayat transaksi Stockbit"
+  },
+  {
+   "kode": "kas_penyangga",
+   "parameter": "Kas penyangga di RDN",
+   "nilai": 0.02,
+   "nilai_teks": "Sekitar 2% equity",
+   "acuan": "Spesifikasi v3.3, bagian 1. Berlaku 13 November 2026"
+  },
+  {
+   "kode": "kas_berlebih",
+   "parameter": "Kas berlebih dibelikan saham inti",
+   "nilai": 0.05,
+   "nilai_teks": "Di atas 5% equity, saat review bulanan",
+   "acuan": "Spesifikasi v3.3, bagian 1. Berlaku 13 November 2026"
+  },
+  {
+   "kode": "non_bank",
+   "parameter": "Jenis usaha porsi inti",
+   "nilai": null,
+   "nilai_teks": "Bukan bank dan bukan multifinance",
+   "acuan": "Spesifikasi v3.2, bagian 2. Permintaan pemilik dana 10 November 2026"
+  },
+  {
+   "kode": "batas_beli",
+   "parameter": "Batas harga beli",
+   "nilai": 0.02,
+   "nilai_teks": "Paling tinggi 2% di atas harga acuan",
+   "acuan": "Spesifikasi v3.3, bagian 7"
+  },
+  {
+   "kode": "batas_jual",
+   "parameter": "Batas harga jual",
+   "nilai": -0.03,
+   "nilai_teks": "Paling rendah 3% di bawah harga acuan",
+   "acuan": "Spesifikasi v3.3, bagian 7"
+  }
+ ],
+ "rekonsiliasi": [
+  {
+   "minggu": "2026-W45",
+   "urutan": 1,
+   "komponen": "Nilai awal, 30 Oktober",
+   "jenis": "awal",
+   "nilai": 12352300,
+   "keterangan": "Total equity Stockbit"
+  },
+  {
+   "minggu": "2026-W45",
+   "urutan": 2,
+   "komponen": "Pergerakan harga saham",
+   "jenis": "komponen",
+   "nilai": 45000,
+   "keterangan": "Perubahan nilai pasar 16 saham"
+  },
+  {
+   "minggu": "2026-W45",
+   "urutan": 3,
+   "komponen": "Dividen diterima",
+   "jenis": "komponen",
+   "nilai": 0,
+   "keterangan": "Tidak ada"
+  },
+  {
+   "minggu": "2026-W45",
+   "urutan": 4,
+   "komponen": "Biaya transaksi",
+   "jenis": "komponen",
+   "nilai": 0,
+   "keterangan": "Tidak ada transaksi"
+  },
+  {
+   "minggu": "2026-W45",
+   "urutan": 5,
+   "komponen": "Setoran atau penarikan",
+   "jenis": "komponen",
+   "nilai": 0,
+   "keterangan": "Tidak ada"
+  },
+  {
+   "minggu": "2026-W45",
+   "urutan": 6,
+   "komponen": "Selisih kas belum terjelaskan",
+   "jenis": "komponen",
+   "nilai": -188200,
+   "keterangan": "Kas Rp263.800 menjadi Rp75.600 tanpa transaksi tercatat"
+  },
+  {
+   "minggu": "2026-W45",
+   "urutan": 7,
+   "komponen": "Nilai akhir, 6 November",
+   "jenis": "akhir",
+   "nilai": 12209100,
+   "keterangan": "Total equity Stockbit"
+  },
+  {
+   "minggu": "2026-W46",
+   "urutan": 1,
+   "komponen": "Nilai awal, 6 November",
+   "jenis": "awal",
+   "nilai": 12209100,
+   "keterangan": "Total equity Stockbit, sama dengan nilai akhir minggu lalu"
+  },
+  {
+   "minggu": "2026-W46",
+   "urutan": 2,
+   "komponen": "Pergerakan harga saham",
+   "jenis": "komponen",
+   "nilai": 622600,
+   "keterangan": "Nilai pasar akhir Rp8.294.500 dikurangi nilai pasar awal Rp12.133.500, ditambah hasil jual kotor Rp17.484.100, dikurangi pembelian kotor Rp13.022.500"
+  },
+  {
+   "minggu": "2026-W46",
+   "urutan": 3,
+   "komponen": "Dividen diterima",
+   "jenis": "komponen",
+   "nilai": 0,
+   "keterangan": "Tidak ada"
+  },
+  {
+   "minggu": "2026-W46",
+   "urutan": 4,
+   "komponen": "Biaya transaksi",
+   "jenis": "komponen",
+   "nilai": -63242,
+   "keterangan": "Biaya beli 0,15% dan biaya jual 0,25% dari 25 order"
+  },
+  {
+   "minggu": "2026-W46",
+   "urutan": 5,
+   "komponen": "Setoran atau penarikan",
+   "jenis": "komponen",
+   "nilai": 0,
+   "keterangan": "Tidak ada"
+  },
+  {
+   "minggu": "2026-W46",
+   "urutan": 6,
+   "komponen": "Selisih kas belum terjelaskan",
+   "jenis": "komponen",
+   "nilai": -10002,
+   "keterangan": "Kas 9 November Rp10.001 lebih kecil dari hitungan order (E-04), ditambah pembulatan Rp1 pada 13 November"
+  },
+  {
+   "minggu": "2026-W46",
+   "urutan": 7,
+   "komponen": "Nilai akhir, 13 November",
+   "jenis": "akhir",
+   "nilai": 12758456,
+   "keterangan": "Total equity Stockbit, dibaca 14 November 08.11 WIB"
+  },
+  {
+   "minggu": "2026-W47",
+   "urutan": 1,
+   "komponen": "Nilai awal, 13 November",
+   "jenis": "awal",
+   "nilai": 12758456,
+   "keterangan": "Total equity Stockbit, sama dengan nilai akhir minggu lalu"
+  },
+  {
+   "minggu": "2026-W47",
+   "urutan": 2,
+   "komponen": "Pergerakan harga saham",
+   "jenis": "komponen",
+   "nilai": -334000,
+   "keterangan": "Nilai pasar akhir Rp12.168.500 dikurangi nilai pasar awal Rp8.294.500, dikurangi pembelian kotor Rp4.208.000"
+  },
+  {
+   "minggu": "2026-W47",
+   "urutan": 3,
+   "komponen": "Dividen diterima",
+   "jenis": "komponen",
+   "nilai": 0,
+   "keterangan": "Tidak ada"
+  },
+  {
+   "minggu": "2026-W47",
+   "urutan": 4,
+   "komponen": "Biaya transaksi",
+   "jenis": "komponen",
+   "nilai": -6312,
+   "keterangan": "Biaya beli 0,15% dari 2 order, AKRA Rp3.251 dan TAPG Rp3.061"
+  },
+  {
+   "minggu": "2026-W47",
+   "urutan": 5,
+   "komponen": "Setoran atau penarikan",
+   "jenis": "komponen",
+   "nilai": 0,
+   "keterangan": "Tidak ada"
+  },
+  {
+   "minggu": "2026-W47",
+   "urutan": 6,
+   "komponen": "Selisih kas belum terjelaskan",
+   "jenis": "komponen",
+   "nilai": 0,
+   "keterangan": "Kas akhir Rp249.644 sama dengan kas awal Rp4.463.956 dikurangi nilai bersih dua pembelian"
+  },
+  {
+   "minggu": "2026-W47",
+   "urutan": 7,
+   "komponen": "Nilai akhir, 20 November",
+   "jenis": "akhir",
+   "nilai": 12418144,
+   "keterangan": "Total equity Stockbit, dibaca 21 November 11.56 WIB"
+  }
+ ],
+ "nilai_harian": [
+  {
+   "tanggal": "2026-10-30",
+   "nilai_saham": 12088700,
+   "kas": 263800,
+   "nilai_total": 12352500,
+   "ihsg": 5057.05
+  },
+  {
+   "tanggal": "2026-11-02",
+   "nilai_saham": 12126800,
+   "kas": 263800,
+   "nilai_total": 12390600,
+   "ihsg": 5096.83
+  },
+  {
+   "tanggal": "2026-11-03",
+   "nilai_saham": 11662300,
+   "kas": 75600,
+   "nilai_total": 11737900,
+   "ihsg": 4904.29
+  },
+  {
+   "tanggal": "2026-11-04",
+   "nilai_saham": 11875100,
+   "kas": 75600,
+   "nilai_total": 11950700,
+   "ihsg": 4919.77
+  },
+  {
+   "tanggal": "2026-11-05",
+   "nilai_saham": 12181100,
+   "kas": 75600,
+   "nilai_total": 12256700,
+   "ihsg": 5030.26
+  },
+  {
+   "tanggal": "2026-11-06",
+   "nilai_saham": 12133500,
+   "kas": 75600,
+   "nilai_total": 12209100,
+   "ihsg": 5050.43
+  },
+  {
+   "tanggal": "2026-11-09",
+   "nilai_saham": 10264000,
+   "kas": 2073435,
+   "nilai_total": 12337435,
+   "ihsg": 5073.77
+  },
+  {
+   "tanggal": "2026-11-10",
+   "nilai_saham": 9468500,
+   "kas": 2801610,
+   "nilai_total": 12270110,
+   "ihsg": 5125.73
+  },
+  {
+   "tanggal": "2026-11-11",
+   "nilai_saham": 9534500,
+   "kas": 2801610,
+   "nilai_total": 12336110,
+   "ihsg": 5115.04
+  },
+  {
+   "tanggal": "2026-11-12",
+   "nilai_saham": 9806500,
+   "kas": 2801610,
+   "nilai_total": 12608110,
+   "ihsg": 5250.9
+  },
+  {
+   "tanggal": "2026-11-13",
+   "nilai_saham": 8294500,
+   "kas": 4463956,
+   "nilai_total": 12758456,
+   "ihsg": 5344.41
+  },
+  {
+   "tanggal": "2026-11-16",
+   "nilai_saham": 12212000,
+   "kas": 249644,
+   "nilai_total": 12461644,
+   "ihsg": 5320.98
+  },
+  {
+   "tanggal": "2026-11-17",
+   "nilai_saham": 12330500,
+   "kas": 249644,
+   "nilai_total": 12580144,
+   "ihsg": 5304.75
+  },
+  {
+   "tanggal": "2026-11-18",
+   "nilai_saham": 12224000,
+   "kas": 249644,
+   "nilai_total": 12473644,
+   "ihsg": 5247.88
+  },
+  {
+   "tanggal": "2026-11-19",
+   "nilai_saham": 12203500,
+   "kas": 249644,
+   "nilai_total": 12453144,
+   "ihsg": 5194.14
+  },
+  {
+   "tanggal": "2026-11-20",
+   "nilai_saham": 12168500,
+   "kas": 249644,
+   "nilai_total": 12418144,
+   "ihsg": 5146.33
+  }
+ ],
+ "posisi": [
+  {
+   "minggu": "2026-W45",
+   "kode": "ASII",
+   "porsi": "Portofolio lama",
+   "lot": 5,
+   "harga_rata": 4566.84,
+   "harga_akhir": 5000,
+   "nilai": 2500000,
+   "tindakan": "Dijual 9 November",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W45",
+   "kode": "TLKM",
+   "porsi": "Portofolio lama",
+   "lot": 10,
+   "harga_rata": 2263.39,
+   "harga_akhir": 1980,
+   "nilai": 1980000,
+   "tindakan": "Dijual 9 November",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W45",
+   "kode": "ANTM",
+   "porsi": "Portofolio lama",
+   "lot": 6,
+   "harga_rata": 1628.27,
+   "harga_akhir": 2690,
+   "nilai": 1614000,
+   "tindakan": "Dijual 9 November",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W45",
+   "kode": "POWR",
+   "porsi": "Portofolio lama",
+   "lot": 10,
+   "harga_rata": 951.42,
+   "harga_akhir": 965,
+   "nilai": 965000,
+   "tindakan": "Dijual 9 November",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W45",
+   "kode": "SSMS",
+   "porsi": "Portofolio lama",
+   "lot": 10,
+   "harga_rata": 1074.1,
+   "harga_akhir": 960,
+   "nilai": 960000,
+   "tindakan": "Dijual 9 November",
+   "catatan": "Masuk daftar HSC BEI"
+  },
+  {
+   "minggu": "2026-W45",
+   "kode": "NCKL",
+   "porsi": "Portofolio lama",
+   "lot": 10,
+   "harga_rata": 851.27,
+   "harga_akhir": 725,
+   "nilai": 725000,
+   "tindakan": "Dijual 9 November",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W45",
+   "kode": "PGAS",
+   "porsi": "Portofolio lama",
+   "lot": 5,
+   "harga_rata": 1552.32,
+   "harga_akhir": 1430,
+   "nilai": 715000,
+   "tindakan": "Dijual 9 November",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W45",
+   "kode": "DSSA",
+   "porsi": "Portofolio lama",
+   "lot": 10,
+   "harga_rata": 1112.66,
+   "harga_akhir": 600,
+   "nilai": 600000,
+   "tindakan": "Dijual 9 November",
+   "catatan": "Masuk daftar HSC BEI"
+  },
+  {
+   "minggu": "2026-W45",
+   "kode": "MARK",
+   "porsi": "Portofolio lama",
+   "lot": 5,
+   "harga_rata": 1126.68,
+   "harga_akhir": 995,
+   "nilai": 497500,
+   "tindakan": "Dijual 9 November",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W45",
+   "kode": "TOWR",
+   "porsi": "Portofolio lama",
+   "lot": 10,
+   "harga_rata": 446.66,
+   "harga_akhir": 352,
+   "nilai": 352000,
+   "tindakan": "Dijual 9 November",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W45",
+   "kode": "MTLA",
+   "porsi": "Portofolio lama",
+   "lot": 5,
+   "harga_rata": 630.94,
+   "harga_akhir": 700,
+   "nilai": 350000,
+   "tindakan": "Dijual 9 November",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W45",
+   "kode": "PPGL",
+   "porsi": "Portofolio lama",
+   "lot": 10,
+   "harga_rata": 107.16,
+   "harga_akhir": 280,
+   "nilai": 280000,
+   "tindakan": "Tertahan, disuspensi bursa",
+   "catatan": "Disuspensi, public expose 10 November"
+  },
+  {
+   "minggu": "2026-W45",
+   "kode": "MDKI",
+   "porsi": "Portofolio lama",
+   "lot": 10,
+   "harga_rata": 185.27,
+   "harga_akhir": 177,
+   "nilai": 177000,
+   "tindakan": "Dijual 9 November",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W45",
+   "kode": "SPTO",
+   "porsi": "Portofolio lama",
+   "lot": 3,
+   "harga_rata": 600.9,
+   "harga_akhir": 590,
+   "nilai": 177000,
+   "tindakan": "Dijual 9 November",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W45",
+   "kode": "INET",
+   "porsi": "Portofolio lama",
+   "lot": 11,
+   "harga_rata": 234.35,
+   "harga_akhir": 158,
+   "nilai": 173800,
+   "tindakan": "Dijual 9 November",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W45",
+   "kode": "DEWA",
+   "porsi": "Portofolio lama",
+   "lot": 3,
+   "harga_rata": 334.5,
+   "harga_akhir": 224,
+   "nilai": 67200,
+   "tindakan": "Dijual 9 November",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W46",
+   "kode": "AADI",
+   "porsi": "Inti",
+   "lot": 2,
+   "harga_rata": 10390.56,
+   "harga_akhir": 10700,
+   "nilai": 2140000,
+   "tindakan": "Dipegang",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W46",
+   "kode": "INDF",
+   "porsi": "Inti",
+   "lot": 3,
+   "harga_rata": 6885.31,
+   "harga_akhir": 7000,
+   "nilai": 2100000,
+   "tindakan": "Dipegang",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W46",
+   "kode": "ANTM",
+   "porsi": "Inti",
+   "lot": 7,
+   "harga_rata": 2804.2,
+   "harga_akhir": 2810,
+   "nilai": 1967000,
+   "tindakan": "Dipegang",
+   "catatan": "Dibeli 13 November"
+  },
+  {
+   "minggu": "2026-W46",
+   "kode": "INTP",
+   "porsi": "Inti",
+   "lot": 3,
+   "harga_rata": 5933.88,
+   "harga_akhir": 6025,
+   "nilai": 1807500,
+   "tindakan": "Dipegang",
+   "catatan": "Dibeli 13 November"
+  },
+  {
+   "minggu": "2026-W46",
+   "kode": "PPGL",
+   "porsi": "Tertahan",
+   "lot": 10,
+   "harga_rata": 107.16,
+   "harga_akhir": 280,
+   "nilai": 280000,
+   "tindakan": "Tertahan",
+   "catatan": "Disuspensi bursa, dijual setelah suspensi dibuka"
+  },
+  {
+   "minggu": "2026-W47",
+   "kode": "AKRA",
+   "porsi": "Inti",
+   "lot": 17,
+   "harga_rata": 1276.91,
+   "harga_akhir": 1300,
+   "nilai": 2210000,
+   "tindakan": "Dipegang",
+   "catatan": "Dibeli 16 November"
+  },
+  {
+   "minggu": "2026-W47",
+   "kode": "INDF",
+   "porsi": "Inti",
+   "lot": 3,
+   "harga_rata": 6885.31,
+   "harga_akhir": 7200,
+   "nilai": 2160000,
+   "tindakan": "Dipegang",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W47",
+   "kode": "AADI",
+   "porsi": "Inti",
+   "lot": 2,
+   "harga_rata": 10390.56,
+   "harga_akhir": 9875,
+   "nilai": 1975000,
+   "tindakan": "Dipegang",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W47",
+   "kode": "TAPG",
+   "porsi": "Inti",
+   "lot": 11,
+   "harga_rata": 1857.78,
+   "harga_akhir": 1715,
+   "nilai": 1886500,
+   "tindakan": "Dipegang",
+   "catatan": "Dibeli 16 November"
+  },
+  {
+   "minggu": "2026-W47",
+   "kode": "INTP",
+   "porsi": "Inti",
+   "lot": 3,
+   "harga_rata": 5933.88,
+   "harga_akhir": 6100,
+   "nilai": 1830000,
+   "tindakan": "Dipegang",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W47",
+   "kode": "ANTM",
+   "porsi": "Inti",
+   "lot": 7,
+   "harga_rata": 2804.2,
+   "harga_akhir": 2610,
+   "nilai": 1827000,
+   "tindakan": "Dipegang",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W47",
+   "kode": "PPGL",
+   "porsi": "Tertahan",
+   "lot": 10,
+   "harga_rata": 107.16,
+   "harga_akhir": 280,
+   "nilai": 280000,
+   "tindakan": "Tertahan",
+   "catatan": "Disuspensi bursa, dijual setelah suspensi dibuka. Saham bonus sekitar 666 lembar dibagikan 25 November"
+  }
+ ],
+ "susunan_target": [
+  {
+   "minggu": "2026-W45",
+   "kode": "AADI",
+   "tema": "Batu bara",
+   "sektor": "Energi",
+   "lot": 2,
+   "harga_acuan": 10150,
+   "batas_harga": 10350,
+   "nilai": 2030000,
+   "alasan": "PE 5,4, dividen 9,9%, laba kuartal terakhir naik 44% YoY"
+  },
+  {
+   "minggu": "2026-W45",
+   "kode": "HMSP",
+   "tema": "Rokok",
+   "sektor": "Barang konsumen primer",
+   "lot": 27,
+   "harga_acuan": 650,
+   "batas_harga": 660,
+   "nilai": 1755000,
+   "alasan": "ROE 30,5%, hampir tanpa utang, dividen 8,7%"
+  },
+  {
+   "minggu": "2026-W45",
+   "kode": "INDF",
+   "tema": "Makanan",
+   "sektor": "Barang konsumen primer",
+   "lot": 3,
+   "harga_acuan": 6875,
+   "batas_harga": 7000,
+   "nilai": 2062500,
+   "alasan": "Harga paling stabil di antara kandidat, PBV 0,76, laba kuartal terakhir naik 54% YoY"
+  },
+  {
+   "minggu": "2026-W45",
+   "kode": "BFIN",
+   "tema": "Pembiayaan",
+   "sektor": "Keuangan",
+   "lot": 23,
+   "harga_acuan": 720,
+   "batas_harga": 730,
+   "nilai": 1656000,
+   "alasan": "PE 6,3, dividen 9,7%, target harga median analis 53% di atas harga 6 November"
+  },
+  {
+   "minggu": "2026-W45",
+   "kode": "BBRI",
+   "tema": "Bank",
+   "sektor": "Keuangan",
+   "lot": 6,
+   "harga_acuan": 2810,
+   "batas_harga": 2860,
+   "nilai": 1686000,
+   "alasan": "Dividen 12,3%, ROE 19%, laba kuartal terakhir naik 21% YoY"
+  },
+  {
+   "minggu": "2026-W46",
+   "kode": "AKRA",
+   "tema": "Energi lain",
+   "sektor": "Energi",
+   "lot": 17,
+   "harga_acuan": 1280,
+   "batas_harga": 1305,
+   "nilai": 2176000,
+   "alasan": "Skor 0,584. ROE 23,8%, DER 0,27, dividend yield 7,8%. Korelasi rata-rata dengan saham inti lain 0,26. Baru, tiket 16 November"
+  },
+  {
+   "minggu": "2026-W46",
+   "kode": "AADI",
+   "tema": "Batu bara",
+   "sektor": "Energi",
+   "lot": 2,
+   "harga_acuan": 10700,
+   "batas_harga": null,
+   "nilai": 2140000,
+   "alasan": "Skor 0,678, tertinggi di antara saham layak. Dipegang"
+  },
+  {
+   "minggu": "2026-W46",
+   "kode": "INDF",
+   "tema": "Makanan-minuman",
+   "sektor": "Barang konsumen primer",
+   "lot": 3,
+   "harga_acuan": 7000,
+   "batas_harga": null,
+   "nilai": 2100000,
+   "alasan": "Skor 0,628, volatilitas harga terendah di antara saham inti. Dipegang"
+  },
+  {
+   "minggu": "2026-W46",
+   "kode": "TAPG",
+   "tema": "Perkebunan",
+   "sektor": "Barang konsumen primer",
+   "lot": 11,
+   "harga_acuan": 1845,
+   "batas_harga": 1880,
+   "nilai": 2029500,
+   "alasan": "Skor 0,578. ROE 38,7%, DER 0,08, dividend yield 12,0%. Baru, tiket 16 November"
+  },
+  {
+   "minggu": "2026-W46",
+   "kode": "ANTM",
+   "tema": "Logam",
+   "sektor": "Barang baku",
+   "lot": 7,
+   "harga_acuan": 2810,
+   "batas_harga": null,
+   "nilai": 1967000,
+   "alasan": "Skor 0,569, pengganti BBRI dan BFIN sejak 13 November. Dipegang"
+  },
+  {
+   "minggu": "2026-W46",
+   "kode": "INTP",
+   "tema": "Semen",
+   "sektor": "Barang baku",
+   "lot": 3,
+   "harga_acuan": 6025,
+   "batas_harga": null,
+   "nilai": 1807500,
+   "alasan": "Skor 0,538, pengganti BBRI dan BFIN sejak 13 November. Dipegang"
+  },
+  {
+   "minggu": "2026-W47",
+   "kode": "AADI",
+   "tema": "Batu bara",
+   "sektor": "Energi",
+   "lot": 2,
+   "harga_acuan": 9875,
+   "batas_harga": null,
+   "nilai": 1975000,
+   "alasan": "Skor 0,761, peringkat 1 dari 28. Dipegang"
+  },
+  {
+   "minggu": "2026-W47",
+   "kode": "ANTM",
+   "tema": "Logam",
+   "sektor": "Barang baku",
+   "lot": 7,
+   "harga_acuan": 2610,
+   "batas_harga": null,
+   "nilai": 1827000,
+   "alasan": "Skor 0,616, peringkat 5 dari 28. Dipegang"
+  },
+  {
+   "minggu": "2026-W47",
+   "kode": "AKRA",
+   "tema": "Energi lain",
+   "sektor": "Energi",
+   "lot": 17,
+   "harga_acuan": 1300,
+   "batas_harga": null,
+   "nilai": 2210000,
+   "alasan": "Skor 0,614, peringkat 6 dari 28. Dipegang"
+  },
+  {
+   "minggu": "2026-W47",
+   "kode": "TAPG",
+   "tema": "Perkebunan",
+   "sektor": "Barang konsumen primer",
+   "lot": 11,
+   "harga_acuan": 1715,
+   "batas_harga": null,
+   "nilai": 1886500,
+   "alasan": "Skor 0,611, peringkat 7 dari 28. Dipegang"
+  },
+  {
+   "minggu": "2026-W47",
+   "kode": "INDF",
+   "tema": "Makanan-minuman",
+   "sektor": "Barang konsumen primer",
+   "lot": 3,
+   "harga_acuan": 7200,
+   "batas_harga": null,
+   "nilai": 2160000,
+   "alasan": "Skor 0,550, peringkat 8 dari 28. Dipegang"
+  },
+  {
+   "minggu": "2026-W47",
+   "kode": "INTP",
+   "tema": "Semen",
+   "sektor": "Barang baku",
+   "lot": 3,
+   "harga_acuan": 6100,
+   "batas_harga": null,
+   "nilai": 1830000,
+   "alasan": "Skor 0,504, peringkat 16 dari 28. Dipegang"
+  }
+ ],
+ "transaksi": [
+  {
+   "minggu": "2026-W46",
+   "no": 1,
+   "tanggal": "2026-11-09",
+   "kode": "ASII",
+   "sisi": "Jual",
+   "lot": 5,
+   "harga": 5025,
+   "nilai": 2512500,
+   "biaya": 6281,
+   "keterangan": "Pindahan portofolio lama, tiket 9 November"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 2,
+   "tanggal": "2026-11-09",
+   "kode": "TLKM",
+   "sisi": "Jual",
+   "lot": 10,
+   "harga": 2070,
+   "nilai": 2070000,
+   "biaya": 5175,
+   "keterangan": "Pindahan portofolio lama, tiket 9 November"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 3,
+   "tanggal": "2026-11-09",
+   "kode": "ANTM",
+   "sisi": "Jual",
+   "lot": 6,
+   "harga": 2750,
+   "nilai": 1650000,
+   "biaya": 4125,
+   "keterangan": "Pindahan portofolio lama, tiket 9 November"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 4,
+   "tanggal": "2026-11-09",
+   "kode": "POWR",
+   "sisi": "Jual",
+   "lot": 10,
+   "harga": 955,
+   "nilai": 955000,
+   "biaya": 2387,
+   "keterangan": "Pindahan portofolio lama, tiket 9 November"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 5,
+   "tanggal": "2026-11-09",
+   "kode": "PGAS",
+   "sisi": "Jual",
+   "lot": 5,
+   "harga": 1465,
+   "nilai": 732500,
+   "biaya": 1831,
+   "keterangan": "Pindahan portofolio lama, tiket 9 November"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 6,
+   "tanggal": "2026-11-09",
+   "kode": "DSSA",
+   "sisi": "Jual",
+   "lot": 10,
+   "harga": 635,
+   "nilai": 635000,
+   "biaya": 1587,
+   "keterangan": "Pindahan portofolio lama, tiket 9 November"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 7,
+   "tanggal": "2026-11-09",
+   "kode": "MARK",
+   "sisi": "Jual",
+   "lot": 5,
+   "harga": 995,
+   "nilai": 497500,
+   "biaya": 1244,
+   "keterangan": "Pindahan portofolio lama, tiket 9 November"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 8,
+   "tanggal": "2026-11-09",
+   "kode": "TOWR",
+   "sisi": "Jual",
+   "lot": 10,
+   "harga": 364,
+   "nilai": 364000,
+   "biaya": 910,
+   "keterangan": "Pindahan portofolio lama, tiket 9 November"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 9,
+   "tanggal": "2026-11-09",
+   "kode": "MTLA",
+   "sisi": "Jual",
+   "lot": 5,
+   "harga": 675,
+   "nilai": 337500,
+   "biaya": 844,
+   "keterangan": "Pindahan portofolio lama, tiket 9 November. Terisi di bawah batas jual minimal 680 (E-03)"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 10,
+   "tanggal": "2026-11-09",
+   "kode": "SPTO",
+   "sisi": "Jual",
+   "lot": 3,
+   "harga": 590,
+   "nilai": 177000,
+   "biaya": 442,
+   "keterangan": "Pindahan portofolio lama, tiket 9 November"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 11,
+   "tanggal": "2026-11-09",
+   "kode": "INET",
+   "sisi": "Jual",
+   "lot": 11,
+   "harga": 177,
+   "nilai": 194700,
+   "biaya": 487,
+   "keterangan": "Pindahan portofolio lama, tiket 9 November"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 12,
+   "tanggal": "2026-11-09",
+   "kode": "DEWA",
+   "sisi": "Jual",
+   "lot": 3,
+   "harga": 228,
+   "nilai": 68400,
+   "biaya": 171,
+   "keterangan": "Pindahan portofolio lama, tiket 9 November"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 13,
+   "tanggal": "2026-11-09",
+   "kode": "MDKI",
+   "sisi": "Jual",
+   "lot": 10,
+   "harga": 176,
+   "nilai": 176000,
+   "biaya": 440,
+   "keterangan": "Pindahan portofolio lama, tiket 9 November. 1 lot pagi, 9 lot sore"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 14,
+   "tanggal": "2026-11-09",
+   "kode": "SSMS",
+   "sisi": "Jual",
+   "lot": 10,
+   "harga": 965,
+   "nilai": 965000,
+   "biaya": 2412,
+   "keterangan": "Pindahan portofolio lama, tiket 9 November"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 15,
+   "tanggal": "2026-11-09",
+   "kode": "AADI",
+   "sisi": "Beli",
+   "lot": 2,
+   "harga": 10375,
+   "nilai": 2075000,
+   "biaya": 3113,
+   "keterangan": "Pembelian porsi inti, tiket 9 November. Terisi di atas batas beli 10.350 (E-02)"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 16,
+   "tanggal": "2026-11-09",
+   "kode": "HMSP",
+   "sisi": "Beli",
+   "lot": 27,
+   "harga": 660,
+   "nilai": 1782000,
+   "biaya": 2673,
+   "keterangan": "Pembelian porsi inti, tiket 9 November"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 17,
+   "tanggal": "2026-11-09",
+   "kode": "INDF",
+   "sisi": "Beli",
+   "lot": 3,
+   "harga": 6875,
+   "nilai": 2062500,
+   "biaya": 3094,
+   "keterangan": "Pembelian porsi inti, tiket 9 November"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 18,
+   "tanggal": "2026-11-09",
+   "kode": "BFIN",
+   "sisi": "Beli",
+   "lot": 23,
+   "harga": 725,
+   "nilai": 1667500,
+   "biaya": 2501,
+   "keterangan": "Pembelian porsi inti, tiket 9 November"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 19,
+   "tanggal": "2026-11-09",
+   "kode": "BBRI",
+   "sisi": "Beli",
+   "lot": 6,
+   "harga": 2830,
+   "nilai": 1698000,
+   "biaya": 2547,
+   "keterangan": "Pembelian porsi inti, tiket 9 November"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 20,
+   "tanggal": "2026-11-10",
+   "kode": "NCKL",
+   "sisi": "Jual",
+   "lot": 10,
+   "harga": 730,
+   "nilai": 730000,
+   "biaya": 1825,
+   "keterangan": "Sisa pindahan, tiket 10 November"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 21,
+   "tanggal": "2026-11-13",
+   "kode": "BBRI",
+   "sisi": "Jual",
+   "lot": 6,
+   "harga": 3040,
+   "nilai": 1824000,
+   "biaya": 4560,
+   "keterangan": "Penggantian paksa, bank dan multifinance (v3.2)"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 22,
+   "tanggal": "2026-11-13",
+   "kode": "BFIN",
+   "sisi": "Jual",
+   "lot": 23,
+   "harga": 800,
+   "nilai": 1840000,
+   "biaya": 4600,
+   "keterangan": "Penggantian paksa, bank dan multifinance (v3.2)"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 23,
+   "tanggal": "2026-11-13",
+   "kode": "HMSP",
+   "sisi": "Jual",
+   "lot": 27,
+   "harga": 650,
+   "nilai": 1755000,
+   "biaya": 4387,
+   "keterangan": "Penggantian paksa, masuk daftar HSC"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 24,
+   "tanggal": "2026-11-13",
+   "kode": "INTP",
+   "sisi": "Beli",
+   "lot": 3,
+   "harga": 5925,
+   "nilai": 1777500,
+   "biaya": 2666,
+   "keterangan": "Pengganti BBRI dan BFIN"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 25,
+   "tanggal": "2026-11-13",
+   "kode": "ANTM",
+   "sisi": "Beli",
+   "lot": 7,
+   "harga": 2800,
+   "nilai": 1960000,
+   "biaya": 2940,
+   "keterangan": "Pengganti BBRI dan BFIN"
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 1,
+   "tanggal": "2026-11-16",
+   "kode": "AKRA",
+   "sisi": "Beli",
+   "lot": 17,
+   "harga": 1275,
+   "nilai": 2167500,
+   "biaya": 3251,
+   "keterangan": "Saham inti baru, tiket 16 November, dalam batas 1.305"
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 2,
+   "tanggal": "2026-11-16",
+   "kode": "TAPG",
+   "sisi": "Beli",
+   "lot": 11,
+   "harga": 1855,
+   "nilai": 2040500,
+   "biaya": 3061,
+   "keterangan": "Saham inti baru, tiket 16 November, dalam batas 1.880"
+  }
+ ],
+ "rencana_transaksi": [
+  {
+   "minggu": "2026-W45",
+   "no": 1,
+   "tanggal_rencana": "2026-11-09",
+   "kode": "ASII",
+   "sisi": "Jual",
+   "lot": 5,
+   "harga_acuan": 5000,
+   "batas_harga": null,
+   "nilai_perkiraan": 2500000,
+   "aturan": "Limit di bid terbaik"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 2,
+   "tanggal_rencana": "2026-11-09",
+   "kode": "TLKM",
+   "sisi": "Jual",
+   "lot": 10,
+   "harga_acuan": 1980,
+   "batas_harga": null,
+   "nilai_perkiraan": 1980000,
+   "aturan": "Limit di bid terbaik"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 3,
+   "tanggal_rencana": "2026-11-09",
+   "kode": "ANTM",
+   "sisi": "Jual",
+   "lot": 6,
+   "harga_acuan": 2690,
+   "batas_harga": null,
+   "nilai_perkiraan": 1614000,
+   "aturan": "Limit di bid terbaik"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 4,
+   "tanggal_rencana": "2026-11-09",
+   "kode": "POWR",
+   "sisi": "Jual",
+   "lot": 10,
+   "harga_acuan": 965,
+   "batas_harga": null,
+   "nilai_perkiraan": 965000,
+   "aturan": "Limit di bid terbaik"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 5,
+   "tanggal_rencana": "2026-11-09",
+   "kode": "SSMS",
+   "sisi": "Jual",
+   "lot": 10,
+   "harga_acuan": 960,
+   "batas_harga": null,
+   "nilai_perkiraan": 960000,
+   "aturan": "Limit di bid terbaik"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 6,
+   "tanggal_rencana": "2026-11-09",
+   "kode": "NCKL",
+   "sisi": "Jual",
+   "lot": 10,
+   "harga_acuan": 725,
+   "batas_harga": null,
+   "nilai_perkiraan": 725000,
+   "aturan": "Limit di bid terbaik"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 7,
+   "tanggal_rencana": "2026-11-09",
+   "kode": "PGAS",
+   "sisi": "Jual",
+   "lot": 5,
+   "harga_acuan": 1430,
+   "batas_harga": null,
+   "nilai_perkiraan": 715000,
+   "aturan": "Limit di bid terbaik"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 8,
+   "tanggal_rencana": "2026-11-09",
+   "kode": "DSSA",
+   "sisi": "Jual",
+   "lot": 10,
+   "harga_acuan": 600,
+   "batas_harga": null,
+   "nilai_perkiraan": 600000,
+   "aturan": "Limit di bid terbaik"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 9,
+   "tanggal_rencana": "2026-11-09",
+   "kode": "MARK",
+   "sisi": "Jual",
+   "lot": 5,
+   "harga_acuan": 995,
+   "batas_harga": null,
+   "nilai_perkiraan": 497500,
+   "aturan": "Limit di bid terbaik"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 10,
+   "tanggal_rencana": "2026-11-09",
+   "kode": "TOWR",
+   "sisi": "Jual",
+   "lot": 10,
+   "harga_acuan": 352,
+   "batas_harga": null,
+   "nilai_perkiraan": 352000,
+   "aturan": "Limit di bid terbaik"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 11,
+   "tanggal_rencana": "2026-11-09",
+   "kode": "MTLA",
+   "sisi": "Jual",
+   "lot": 5,
+   "harga_acuan": 700,
+   "batas_harga": null,
+   "nilai_perkiraan": 350000,
+   "aturan": "Limit di bid terbaik"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 12,
+   "tanggal_rencana": "2026-11-09",
+   "kode": "MDKI",
+   "sisi": "Jual",
+   "lot": 10,
+   "harga_acuan": 177,
+   "batas_harga": null,
+   "nilai_perkiraan": 177000,
+   "aturan": "Limit di bid terbaik"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 13,
+   "tanggal_rencana": "2026-11-09",
+   "kode": "SPTO",
+   "sisi": "Jual",
+   "lot": 3,
+   "harga_acuan": 590,
+   "batas_harga": null,
+   "nilai_perkiraan": 177000,
+   "aturan": "Limit di bid terbaik"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 14,
+   "tanggal_rencana": "2026-11-09",
+   "kode": "INET",
+   "sisi": "Jual",
+   "lot": 11,
+   "harga_acuan": 158,
+   "batas_harga": null,
+   "nilai_perkiraan": 173800,
+   "aturan": "Limit di bid terbaik"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 15,
+   "tanggal_rencana": "2026-11-09",
+   "kode": "DEWA",
+   "sisi": "Jual",
+   "lot": 3,
+   "harga_acuan": 224,
+   "batas_harga": null,
+   "nilai_perkiraan": 67200,
+   "aturan": "Limit di bid terbaik"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 16,
+   "tanggal_rencana": "2026-11-09",
+   "kode": "AADI",
+   "sisi": "Beli",
+   "lot": 2,
+   "harga_acuan": 10150,
+   "batas_harga": 10350,
+   "nilai_perkiraan": 2030000,
+   "aturan": "Ditunda kalau offer di atas batas"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 17,
+   "tanggal_rencana": "2026-11-09",
+   "kode": "HMSP",
+   "sisi": "Beli",
+   "lot": 27,
+   "harga_acuan": 650,
+   "batas_harga": 660,
+   "nilai_perkiraan": 1755000,
+   "aturan": "Ditunda kalau offer di atas batas"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 18,
+   "tanggal_rencana": "2026-11-09",
+   "kode": "INDF",
+   "sisi": "Beli",
+   "lot": 3,
+   "harga_acuan": 6875,
+   "batas_harga": 7000,
+   "nilai_perkiraan": 2062500,
+   "aturan": "Ditunda kalau offer di atas batas"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 19,
+   "tanggal_rencana": "2026-11-09",
+   "kode": "BFIN",
+   "sisi": "Beli",
+   "lot": 23,
+   "harga_acuan": 720,
+   "batas_harga": 730,
+   "nilai_perkiraan": 1656000,
+   "aturan": "Ditunda kalau offer di atas batas"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 20,
+   "tanggal_rencana": "2026-11-09",
+   "kode": "BBRI",
+   "sisi": "Beli",
+   "lot": 6,
+   "harga_acuan": 2810,
+   "batas_harga": 2860,
+   "nilai_perkiraan": 1686000,
+   "aturan": "Ditunda kalau offer di atas batas"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 1,
+   "tanggal_rencana": "2026-11-16",
+   "kode": "TAPG",
+   "sisi": "Beli",
+   "lot": 11,
+   "harga_acuan": 1845,
+   "batas_harga": 1880,
+   "nilai_perkiraan": 2029500,
+   "aturan": "Saham inti baru v3.3, limit, tidak dikejar di atas batas"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 2,
+   "tanggal_rencana": "2026-11-16",
+   "kode": "AKRA",
+   "sisi": "Beli",
+   "lot": 17,
+   "harga_acuan": 1280,
+   "batas_harga": 1305,
+   "nilai_perkiraan": 2176000,
+   "aturan": "Saham inti baru v3.3, limit, tidak dikejar di atas batas"
+  }
+ ],
+ "kepatuhan": [
+  {
+   "minggu": "2026-W45",
+   "no": 1,
+   "aturan": "Jumlah saham inti",
+   "batas": "5 saham",
+   "kondisi": "16 saham lama",
+   "status": "Belum patuh",
+   "catatan": "Transisi dijadwalkan 9 November"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 2,
+   "aturan": "Saham HSC di portofolio",
+   "batas": "Tidak boleh ada",
+   "kondisi": "SSMS, DSSA",
+   "status": "Belum patuh",
+   "catatan": "Ikut dijual 9 November"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 3,
+   "aturan": "Saham disuspensi",
+   "batas": "Dicatat terpisah",
+   "kondisi": "PPGL, Rp280.000",
+   "status": "Patuh",
+   "catatan": "Dijual setelah suspensi dibuka"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 4,
+   "aturan": "Bobot per saham inti, susunan target",
+   "batas": "15% sampai 25% porsi inti",
+   "kondisi": "18,0% sampai 22,4%",
+   "status": "Patuh",
+   "catatan": "Berlaku mulai 9 November"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 5,
+   "aturan": "Saham inti per sektor, susunan target",
+   "batas": "Maksimal 2",
+   "kondisi": "Maksimal 2",
+   "status": "Patuh",
+   "catatan": "Konsumen primer 2, keuangan 2, energi 1"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 6,
+   "aturan": "Saham inti per tema usaha, susunan target",
+   "batas": "Maksimal 1",
+   "kondisi": "1 per tema",
+   "status": "Patuh",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 7,
+   "aturan": "Posisi trading saat gerbang pasar tertutup",
+   "batas": "0 posisi",
+   "kondisi": "0 posisi",
+   "status": "Patuh",
+   "catatan": "IHSG di bawah MA50, MA50 di bawah MA200"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 8,
+   "aturan": "Risiko per transaksi trading",
+   "batas": "Maksimal 2% modal trading",
+   "kondisi": "Tidak ada transaksi",
+   "status": "Tidak berlaku",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 9,
+   "aturan": "Penggantian saham inti",
+   "batas": "Maksimal 1 per bulan",
+   "kondisi": "0",
+   "status": "Tidak berlaku",
+   "catatan": "Susunan awal, belum ada penggantian"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 1,
+   "aturan": "Jumlah saham inti",
+   "batas": "6 saham",
+   "kondisi": "4 saham, 2 dibeli 16 November",
+   "status": "Belum patuh",
+   "catatan": "Aturan 6 saham berlaku 13 November, tiket pembelian sudah terbit"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 2,
+   "aturan": "Saham HSC di portofolio",
+   "batas": "Tidak boleh ada",
+   "kondisi": "Tidak ada",
+   "status": "Patuh",
+   "catatan": "HMSP masuk HSC 11 November dan sudah dijual 13 November"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 3,
+   "aturan": "Bank dan multifinance di porsi inti",
+   "batas": "Tidak boleh ada",
+   "kondisi": "Tidak ada",
+   "status": "Patuh",
+   "catatan": "BBRI dan BFIN dijual 13 November, terlambat 3 hari bursa dari tiket pertama (E-05 sampai E-07)"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 4,
+   "aturan": "Saham disuspensi",
+   "batas": "Dicatat terpisah",
+   "kondisi": "PPGL, Rp280.000",
+   "status": "Patuh",
+   "catatan": "Dijual setelah suspensi dibuka"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 5,
+   "aturan": "Bobot per saham inti, susunan target",
+   "batas": "12% sampai 22% porsi inti",
+   "kondisi": "14,8% sampai 17,8%",
+   "status": "Patuh",
+   "catatan": "Dihitung pada harga penutupan 13 November"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 6,
+   "aturan": "Saham inti per sektor, susunan target",
+   "batas": "Maksimal 2",
+   "kondisi": "Energi 2, konsumen primer 2, barang baku 2",
+   "status": "Patuh",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 7,
+   "aturan": "Saham inti per tema usaha, susunan target",
+   "batas": "Maksimal 1",
+   "kondisi": "1 per tema",
+   "status": "Patuh",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 8,
+   "aturan": "Kas di RDN",
+   "batas": "Sekitar 2% setelah pembelian",
+   "kondisi": "35,0% equity sebelum tiket 16 November, sekitar 2,0% sesudahnya",
+   "status": "Belum patuh",
+   "catatan": "Kas menunggu pembelian AKRA dan TAPG"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 9,
+   "aturan": "Batas harga order",
+   "batas": "Beli maksimal +2%, jual minimal −3% dari harga acuan",
+   "kondisi": "Semua order 13 November dalam batas",
+   "status": "Patuh",
+   "catatan": "Pengecualian 9 November dicatat sebagai E-02 dan E-03"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 10,
+   "aturan": "Penggantian saham inti biasa",
+   "batas": "Maksimal 1 per bulan",
+   "kondisi": "0",
+   "status": "Patuh",
+   "catatan": "Penggantian minggu ini seluruhnya penggantian paksa, tidak dihitung kuota"
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 1,
+   "aturan": "Jumlah saham inti",
+   "batas": "6 saham",
+   "kondisi": "6 saham",
+   "status": "Patuh",
+   "catatan": "TAPG dan AKRA terisi 16 November"
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 2,
+   "aturan": "Saham HSC di portofolio",
+   "batas": "Tidak boleh ada",
+   "kondisi": "Tidak ada",
+   "status": "Patuh",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 3,
+   "aturan": "Bank dan multifinance di porsi inti",
+   "batas": "Tidak boleh ada",
+   "kondisi": "Tidak ada",
+   "status": "Patuh",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 4,
+   "aturan": "Saham disuspensi",
+   "batas": "Dicatat terpisah",
+   "kondisi": "PPGL, Rp280.000",
+   "status": "Patuh",
+   "catatan": "Dijual setelah suspensi dibuka"
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 5,
+   "aturan": "Bobot per saham inti",
+   "batas": "12% sampai 22% porsi inti",
+   "kondisi": "15,4% sampai 18,6%",
+   "status": "Patuh",
+   "catatan": "Dihitung pada harga penutupan 20 November"
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 6,
+   "aturan": "Saham inti per sektor",
+   "batas": "Maksimal 2",
+   "kondisi": "Energi 2, konsumen primer 2, barang baku 2",
+   "status": "Patuh",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 7,
+   "aturan": "Saham inti per tema usaha",
+   "batas": "Maksimal 1",
+   "kondisi": "1 per tema",
+   "status": "Patuh",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 8,
+   "aturan": "Kas di RDN",
+   "batas": "Sekitar 2% equity",
+   "kondisi": "2,0% equity",
+   "status": "Patuh",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 9,
+   "aturan": "Batas harga order",
+   "batas": "Beli maksimal +2%, jual minimal −3% dari harga acuan",
+   "kondisi": "AKRA 1.275 (batas 1.305), TAPG 1.855 (batas 1.880)",
+   "status": "Patuh",
+   "catatan": ""
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 10,
+   "aturan": "Penggantian saham inti biasa",
+   "batas": "Maksimal 1 per bulan",
+   "kondisi": "0",
+   "status": "Patuh",
+   "catatan": "Selisih pasangan terbesar 0,036, di bawah 0,08"
+  }
+ ],
+ "pengecualian": [
+  {
+   "id": "E-01",
+   "minggu_muncul": "2026-W45",
+   "minggu": "2026-W45",
+   "uraian": "Kas di Stockbit turun dari Rp263.800 menjadi Rp75.600 pada 3 November tanpa transaksi tercatat",
+   "dampak": -188200,
+   "status": "Terbuka",
+   "tindak_lanjut": "Ditelusuri ke mutasi rekening dana nasabah (RDN)"
+  },
+  {
+   "id": "E-02",
+   "minggu_muncul": "2026-W45",
+   "minggu": "2026-W45",
+   "uraian": "PPGL disuspensi bursa sehingga belum bisa dijual",
+   "dampak": 280000,
+   "status": "Terbuka",
+   "tindak_lanjut": "Public expose 10 November, dijual setelah suspensi dibuka"
+  },
+  {
+   "id": "E-01",
+   "minggu_muncul": "2026-W45",
+   "minggu": "2026-W46",
+   "uraian": "Kas di Stockbit turun dari Rp263.800 menjadi Rp75.600 pada 3 November tanpa transaksi tercatat",
+   "dampak": -188200,
+   "status": "Terbuka",
+   "tindak_lanjut": "Ditelusuri ke mutasi rekening dana nasabah (RDN)"
+  },
+  {
+   "id": "E-02",
+   "minggu_muncul": "2026-W45",
+   "minggu": "2026-W46",
+   "uraian": "PPGL disuspensi bursa sehingga belum bisa dijual",
+   "dampak": 280000,
+   "status": "Terbuka",
+   "tindak_lanjut": "Dijual setelah suspensi dibuka"
+  },
+  {
+   "id": "E-03",
+   "minggu_muncul": "2026-W46",
+   "minggu": "2026-W46",
+   "uraian": "Order 9 November di luar batas tiket: AADI dibeli 10.375 (batas 10.350) dan MTLA dijual 675 (batas 680)",
+   "dampak": -7500,
+   "status": "Selesai",
+   "tindak_lanjut": "Dicatat, batas tidak diubah"
+  },
+  {
+   "id": "E-04",
+   "minggu_muncul": "2026-W46",
+   "minggu": "2026-W46",
+   "uraian": "Kas 9 November Rp10.001 lebih kecil dari hitungan order, ditambah pembulatan Rp1 pada 13 November",
+   "dampak": -10002,
+   "status": "Terbuka",
+   "tindak_lanjut": "Ditelusuri ke mutasi RDN 9 November"
+  },
+  {
+   "id": "E-05",
+   "minggu_muncul": "2026-W46",
+   "minggu": "2026-W46",
+   "uraian": "Penjualan BBRI dan BFIN serta pembelian INTP dan ANTM tertunda dari tiket 10 November sampai 13 November karena order belum dimasukkan dan akun 12 November belum terbaca",
+   "dampak": null,
+   "status": "Selesai",
+   "tindak_lanjut": "Seluruh order terisi 13 November"
+  },
+  {
+   "id": "E-01",
+   "minggu_muncul": "2026-W45",
+   "minggu": "2026-W47",
+   "uraian": "Kas di Stockbit turun dari Rp263.800 menjadi Rp75.600 pada 3 November tanpa transaksi tercatat",
+   "dampak": -188200,
+   "status": "Terbuka",
+   "tindak_lanjut": "Ditelusuri ke mutasi rekening dana nasabah (RDN)"
+  },
+  {
+   "id": "E-02",
+   "minggu_muncul": "2026-W45",
+   "minggu": "2026-W47",
+   "uraian": "PPGL disuspensi bursa sehingga belum bisa dijual",
+   "dampak": 280000,
+   "status": "Terbuka",
+   "tindak_lanjut": "Dijual setelah suspensi dibuka, saham bonus sekitar 666 lembar dibagikan 25 November"
+  },
+  {
+   "id": "E-04",
+   "minggu_muncul": "2026-W46",
+   "minggu": "2026-W47",
+   "uraian": "Kas 9 November Rp10.001 lebih kecil dari hitungan order, ditambah pembulatan Rp1 pada 13 November",
+   "dampak": -10002,
+   "status": "Terbuka",
+   "tindak_lanjut": "Ditelusuri ke mutasi RDN 9 November"
+  }
+ ],
+ "pasar": [
+  {
+   "minggu": "2026-W45",
+   "no": 1,
+   "indikator": "IHSG, penutupan",
+   "nilai": 5050.43,
+   "satuan": "poin",
+   "per_tanggal": "2026-11-06",
+   "sumber": "Yahoo Finance ^JKSE",
+   "url": "https://finance.yahoo.com/quote/%5EJKSE/"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 2,
+   "indikator": "IHSG sejak akhir 2025",
+   "nilai": -0.4159,
+   "satuan": "persen",
+   "per_tanggal": "2026-11-06",
+   "sumber": "Yahoo Finance ^JKSE",
+   "url": "https://finance.yahoo.com/quote/%5EJKSE/"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 3,
+   "indikator": "Rata-rata 50 hari IHSG",
+   "nilai": 5947.76,
+   "satuan": "poin",
+   "per_tanggal": "2026-11-06",
+   "sumber": "Dihitung dari Yahoo Finance ^JKSE",
+   "url": ""
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 4,
+   "indikator": "Rata-rata 200 hari IHSG",
+   "nilai": 6769.99,
+   "satuan": "poin",
+   "per_tanggal": "2026-11-06",
+   "sumber": "Dihitung dari Yahoo Finance ^JKSE",
+   "url": ""
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 5,
+   "indikator": "BI-Rate",
+   "nilai": 0.0575,
+   "satuan": "persen",
+   "per_tanggal": "2026-10-21",
+   "sumber": "Bank Indonesia",
+   "url": "https://www.bi.go.id/id/publikasi/ruang-media/news-release/Pages/sp_2823326.aspx"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 6,
+   "indikator": "Kurs rupiah per dolar AS",
+   "nilai": 18147,
+   "satuan": "rupiah",
+   "per_tanggal": "2026-10-30",
+   "sumber": "Kabar Bursa",
+   "url": "https://www.kabarbursa.com/market-hari-ini/ihsg-dibayangi-tekanan-jual-analis-waspadai-koreksi-ke-bawah-4900"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 1,
+   "indikator": "IHSG, penutupan",
+   "nilai": 5344.41,
+   "satuan": "poin",
+   "per_tanggal": "2026-11-13",
+   "sumber": "Stockbit dan Yahoo Finance ^JKSE",
+   "url": "https://finance.yahoo.com/quote/%5EJKSE/"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 2,
+   "indikator": "IHSG dalam seminggu",
+   "nilai": 0.0582,
+   "satuan": "persen",
+   "per_tanggal": "2026-11-13",
+   "sumber": "Dihitung dari Yahoo Finance ^JKSE",
+   "url": ""
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 3,
+   "indikator": "Rata-rata 50 hari IHSG",
+   "nilai": 5805.4,
+   "satuan": "poin",
+   "per_tanggal": "2026-11-13",
+   "sumber": "Dihitung dari Yahoo Finance ^JKSE",
+   "url": ""
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 4,
+   "indikator": "Rata-rata 200 hari IHSG",
+   "nilai": 6676.3,
+   "satuan": "poin",
+   "per_tanggal": "2026-11-13",
+   "sumber": "Dihitung dari Yahoo Finance ^JKSE",
+   "url": ""
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 5,
+   "indikator": "Saham HSC dikeluarkan dari IHSG",
+   "nilai": 383,
+   "satuan": "saham",
+   "per_tanggal": "2026-11-13",
+   "sumber": "Bursa Efek Indonesia lewat EmitenNews",
+   "url": "https://emitennews.com/news/resmi-383-saham-hsc-didepak-dari-ihsg-efektif-mulai-13-november-2026"
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 1,
+   "indikator": "IHSG, penutupan",
+   "nilai": 5146.33,
+   "satuan": "poin",
+   "per_tanggal": "2026-11-20",
+   "sumber": "Stockbit dan Yahoo Finance ^JKSE",
+   "url": "https://finance.yahoo.com/quote/%5EJKSE/"
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 2,
+   "indikator": "IHSG dalam seminggu",
+   "nilai": -0.0371,
+   "satuan": "persen",
+   "per_tanggal": "2026-11-20",
+   "sumber": "Dihitung dari Yahoo Finance ^JKSE",
+   "url": ""
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 3,
+   "indikator": "Rata-rata 50 hari IHSG",
+   "nilai": 5667.4,
+   "satuan": "poin",
+   "per_tanggal": "2026-11-20",
+   "sumber": "Dihitung dari Yahoo Finance ^JKSE",
+   "url": ""
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 4,
+   "indikator": "Rata-rata 200 hari IHSG",
+   "nilai": 6580.5,
+   "satuan": "poin",
+   "per_tanggal": "2026-11-20",
+   "sumber": "Dihitung dari Yahoo Finance ^JKSE",
+   "url": ""
+  }
+ ],
+ "risiko": [
+  {
+   "minggu": "2026-W45",
+   "no": 1,
+   "risiko": "Status pasar Indonesia di MSCI",
+   "alasan": "Usulan turun ke Standalone Market bisa memicu penjualan dana asing yang mengikuti indeks MSCI",
+   "dipantau": "Konsultasi sampai 30 April 2027, keputusan paling lambat 30 Juni 2027",
+   "sumber": "MSCI",
+   "url": "https://www.msci.com/downloads/documents/press-releases/media-room/Indonesia_PR_Oct_26.pdf"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 2,
+   "risiko": "Rupiah dan suku bunga",
+   "alasan": "Rupiah di atas Rp18.000 per dolar AS menekan saham dan bisa memicu kenaikan suku bunga",
+   "dipantau": "Kurs harian dan rapat Bank Indonesia berikutnya",
+   "sumber": "Bank Indonesia",
+   "url": "https://www.bi.go.id/id/publikasi/ruang-media/news-release/Pages/sp_2823326.aspx"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 3,
+   "risiko": "Harga batu bara",
+   "alasan": "AADI sekitar 22% porsi inti dan labanya bergantung pada harga batu bara",
+   "dipantau": "Harga batu bara dan laporan kuartalan AADI",
+   "sumber": "",
+   "url": ""
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 4,
+   "risiko": "Pasar masih dalam tren turun",
+   "alasan": "IHSG di bawah rata-rata 50 dan 200 hari",
+   "dipantau": "Porsi trading tetap kas sampai tren berbalik",
+   "sumber": "Yahoo Finance ^JKSE",
+   "url": ""
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 1,
+   "risiko": "Status pasar Indonesia di MSCI",
+   "alasan": "Usulan turun ke Standalone Market bisa memicu penjualan dana asing yang mengikuti indeks MSCI",
+   "dipantau": "Konsultasi sampai 30 April 2027, keputusan paling lambat 30 Juni 2027",
+   "sumber": "MSCI",
+   "url": "https://www.msci.com/downloads/documents/press-releases/media-room/Indonesia_PR_Oct_26.pdf"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 2,
+   "risiko": "Daftar HSC diperluas",
+   "alasan": "Evaluasi 11 November menambah 300 saham HSC, termasuk HMSP yang sempat dipegang. Saham inti bisa terkena di evaluasi berikutnya",
+   "dipantau": "Daftar HSC tiap evaluasi BEI dan status saham inti tiap malam",
+   "sumber": "Bursa Efek Indonesia",
+   "url": "https://emitennews.com/news/resmi-383-saham-hsc-didepak-dari-ihsg-efektif-mulai-13-november-2026"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 3,
+   "risiko": "Komoditas",
+   "alasan": "AADI (batu bara), ANTM (logam), TAPG (sawit), dan AKRA (distribusi BBM) sekitar dua pertiga porsi inti setelah tiket",
+   "dipantau": "Harga batu bara, nikel, emas, dan CPO",
+   "sumber": "",
+   "url": ""
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 4,
+   "risiko": "Kas belum diinvestasikan",
+   "alasan": "35% equity masih kas sampai AKRA dan TAPG terbeli",
+   "dipantau": "Status order tiket 16 November",
+   "sumber": "",
+   "url": ""
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 1,
+   "risiko": "Status pasar Indonesia di MSCI",
+   "alasan": "Usulan turun ke Standalone Market bisa memicu penjualan dana asing yang mengikuti indeks MSCI",
+   "dipantau": "Konsultasi sampai 30 April 2027, keputusan paling lambat 30 Juni 2027",
+   "sumber": "MSCI",
+   "url": "https://www.msci.com/downloads/documents/press-releases/media-room/Indonesia_PR_Oct_26.pdf"
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 2,
+   "risiko": "Daftar HSC diperluas",
+   "alasan": "Evaluasi 11 November menambah 300 saham HSC. Saham inti bisa terkena di evaluasi berikutnya",
+   "dipantau": "Daftar HSC tiap evaluasi BEI dan status saham inti tiap malam",
+   "sumber": "Bursa Efek Indonesia",
+   "url": "https://emitennews.com/news/resmi-383-saham-hsc-didepak-dari-ihsg-efektif-mulai-13-november-2026"
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 3,
+   "risiko": "Komoditas",
+   "alasan": "AADI (batu bara), ANTM (emas dan nikel), TAPG (sawit), dan AKRA (distribusi BBM) sekitar 66% porsi inti. AADI, TAPG, dan ANTM turun 7% sampai 8% minggu ini",
+   "dipantau": "Harga batu bara, nikel, emas, dan CPO",
+   "sumber": "",
+   "url": ""
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 4,
+   "risiko": "Pasar turun",
+   "alasan": "IHSG turun lima hari bursa berturut-turut dan berada di bawah rata-rata 50 dan 200 hari",
+   "dipantau": "Penutupan IHSG tiap malam, sebagai konteks",
+   "sumber": "Yahoo Finance ^JKSE",
+   "url": "https://finance.yahoo.com/quote/%5EJKSE/"
+  }
+ ],
+ "rencana": [
+  {
+   "minggu": "2026-W45",
+   "no": 1,
+   "rencana": "Senin 9 November, menjual 15 saham lama dan membeli 5 saham inti. Pembelian ditunda kalau harga sudah lebih dari 2% di atas penutupan 6 November."
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 2,
+   "rencana": "Memantau public expose PPGL pada 10 November."
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 3,
+   "rencana": "Menelusuri selisih kas Rp188.200 di mutasi RDN."
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 4,
+   "rencana": "Laporan berikutnya terbit Sabtu, 14 November, dengan kinerja dihitung dari titik awal."
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 1,
+   "rencana": "Senin 16 November, membeli TAPG 11 lot (batas 1.880) dan AKRA 17 lot (batas 1.305). Porsi inti menjadi 6 saham dengan kas sekitar 2% equity."
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 2,
+   "rencana": "Menjual PPGL begitu suspensinya dibuka."
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 3,
+   "rencana": "Menelusuri selisih kas E-01 dan E-04 di mutasi RDN."
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 4,
+   "rencana": "Laporan berikutnya terbit Sabtu, 21 November, termasuk review bulanan pertama untuk Desember."
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 1,
+   "rencana": "Tidak ada jual beli minggu depan. Skor ulang tidak menemukan pasangan pengganti dengan selisih minimal 0,08."
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 2,
+   "rencana": "Mencatat saham bonus PPGL yang dibagikan 25 November, lalu menjual seluruh PPGL begitu suspensinya dibuka."
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 3,
+   "rencana": "Menelusuri selisih kas E-01 dan E-04 di mutasi RDN."
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 4,
+   "rencana": "Laporan berikutnya terbit Sabtu, 28 November. Review bulanan pertama dijalankan bersama laporan Sabtu, 5 Desember."
+  }
+ ],
+ "sumber_data": [
+  {
+   "minggu": "2026-W45",
+   "no": 1,
+   "data": "Nilai portofolio, kas, posisi, harga rata-rata",
+   "sumber": "Stockbit, halaman Portfolio dan History",
+   "cara": "Dibaca dari akun Stockbit lewat browser, tanpa akses order",
+   "per_tanggal": "2026-11-06",
+   "keyakinan": "Tinggi"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 2,
+   "data": "Harga penutupan harian saham dan IHSG",
+   "sumber": "Yahoo Finance",
+   "cara": "Diunduh dengan pustaka yfinance",
+   "per_tanggal": "2026-11-06",
+   "keyakinan": "Tinggi"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 3,
+   "data": "Nilai harian di grafik",
+   "sumber": "Rekonstruksi",
+   "cara": "Jumlah lot dikali harga penutupan Yahoo, ditambah kas Stockbit. Pada 30 Oktober hasilnya Rp200 di atas angka Stockbit karena pembulatan harga, sedangkan 6 November sama persis. Tabel rekonsiliasi memakai angka Stockbit",
+   "per_tanggal": "2026-11-06",
+   "keyakinan": "Sedang"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 4,
+   "data": "Fundamental dan target harga analis",
+   "sumber": "Screener Stockbit",
+   "cara": "Dibaca dari screener Stockbit",
+   "per_tanggal": "2026-11-06",
+   "keyakinan": "Sedang"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 5,
+   "data": "Daftar saham HSC",
+   "sumber": "Bursa Efek Indonesia lewat Katadata",
+   "cara": "Daftar 82 saham yang dikeluarkan dari IHSG mulai 2 November",
+   "per_tanggal": "2026-11-02",
+   "keyakinan": "Tinggi"
+  },
+  {
+   "minggu": "2026-W45",
+   "no": 6,
+   "data": "Aturan pengelolaan",
+   "sumber": "Spesifikasi manajer portofolio v2",
+   "cara": "Dokumen aturan tertulis, setiap perubahan dicatat di log",
+   "per_tanggal": "2026-11-08",
+   "keyakinan": "Tinggi"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 1,
+   "data": "Nilai portofolio, kas, posisi, harga rata-rata",
+   "sumber": "Stockbit, panel Portfolio",
+   "cara": "Dibaca dari akun Stockbit lewat browser, tanpa akses order",
+   "per_tanggal": "2026-11-14",
+   "keyakinan": "Tinggi"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 2,
+   "data": "Transaksi dan biaya",
+   "sumber": "Stockbit, tab Order, dicatat di laporan harian 9 sampai 13 November",
+   "cara": "Harga terisi dan nilai bersih per order",
+   "per_tanggal": "2026-11-13",
+   "keyakinan": "Tinggi"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 3,
+   "data": "Harga penutupan harian saham dan IHSG",
+   "sumber": "Yahoo Finance dan Stockbit",
+   "cara": "Diunduh dengan pustaka yfinance. IHSG 13 November diambil dari Stockbit karena belum tersedia di Yahoo",
+   "per_tanggal": "2026-11-13",
+   "keyakinan": "Tinggi"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 4,
+   "data": "Nilai harian di grafik",
+   "sumber": "Laporan harian",
+   "cara": "Kas Stockbit ditambah lot dikali harga penutupan. Nilai 12 November dihitung sebelum transaksi 13 November",
+   "per_tanggal": "2026-11-13",
+   "keyakinan": "Tinggi"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 5,
+   "data": "Fundamental dan skor",
+   "sumber": "Screener Stockbit 6 November, angka yang bergantung harga dihitung ulang dengan harga 13 November",
+   "cara": "PE, PBV, ROE, DER, Piotroski, dividend yield, dan market cap AKRA dan TAPG dicek ulang di halaman Key Stats Stockbit 14 November dan cocok",
+   "per_tanggal": "2026-11-14",
+   "keyakinan": "Sedang"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 6,
+   "data": "Daftar saham HSC",
+   "sumber": "Bursa Efek Indonesia lewat receh.in dan EmitenNews",
+   "cara": "Daftar 383 saham yang dikeluarkan dari IHSG mulai 13 November",
+   "per_tanggal": "2026-11-13",
+   "keyakinan": "Tinggi"
+  },
+  {
+   "minggu": "2026-W46",
+   "no": 7,
+   "data": "Aturan pengelolaan",
+   "sumber": "Spesifikasi manajer portofolio v3.3",
+   "cara": "Dokumen aturan tertulis, setiap perubahan dicatat di log",
+   "per_tanggal": "2026-11-13",
+   "keyakinan": "Tinggi"
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 1,
+   "data": "Nilai portofolio, kas, posisi, harga rata-rata",
+   "sumber": "Stockbit, panel Portfolio",
+   "cara": "Dibaca dari akun Stockbit lewat browser, tanpa akses order",
+   "per_tanggal": "2026-11-21",
+   "keyakinan": "Tinggi"
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 2,
+   "data": "Transaksi dan biaya",
+   "sumber": "Stockbit, tab History",
+   "cara": "Harga terisi dan nilai bersih per order",
+   "per_tanggal": "2026-11-21",
+   "keyakinan": "Tinggi"
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 3,
+   "data": "Harga penutupan harian saham dan IHSG",
+   "sumber": "Yahoo Finance",
+   "cara": "Diunduh dengan pustaka yfinance",
+   "per_tanggal": "2026-11-20",
+   "keyakinan": "Tinggi"
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 4,
+   "data": "Nilai harian di grafik",
+   "sumber": "Dihitung",
+   "cara": "Lot dikali harga penutupan ditambah kas Stockbit. PPGL dinilai Rp280 sesuai terminal",
+   "per_tanggal": "2026-11-20",
+   "keyakinan": "Tinggi"
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 5,
+   "data": "Fundamental dan skor",
+   "sumber": "Screener Stockbit 21 November, volatilitas, korelasi, dan return 12 bulan dari Yahoo Finance",
+   "cara": "Skor dihitung ulang dari aturan spesifikasi v3.4 bagian 2 dan 3",
+   "per_tanggal": "2026-11-21",
+   "keyakinan": "Sedang"
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 6,
+   "data": "Daftar HSC, suspensi, aksi korporasi",
+   "sumber": "Pengumuman BEI lewat berita",
+   "cara": "Dicek tiap malam hari bursa di laporan harian",
+   "per_tanggal": "2026-11-20",
+   "keyakinan": "Sedang"
+  },
+  {
+   "minggu": "2026-W47",
+   "no": 7,
+   "data": "Aturan pengelolaan",
+   "sumber": "Spesifikasi manajer portofolio v3.4",
+   "cara": "Dokumen aturan tertulis, setiap perubahan dicatat di log",
+   "per_tanggal": "2026-11-17",
+   "keyakinan": "Tinggi"
+  }
+ ]
+}
